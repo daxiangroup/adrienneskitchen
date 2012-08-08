@@ -16,16 +16,16 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'adrienneskitchen');
+define('DB_NAME', $_SERVER['DB_ENV']['name']);
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', $_SERVER['DB_ENV']['user']);
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', $_SERVER['DB_ENV']['password']);
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', $_SERVER['DB_ENV']['host']);
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
