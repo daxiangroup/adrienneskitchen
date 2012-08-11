@@ -14,18 +14,21 @@
  * @package WordPress
  */
 
+//define('WP_HOME',$_SERVER['HTTP_HOST']);
+//define('WP_SITEURL',$_SERVER['HTTP_HOST']);
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', $_SERVER['DB_ENV_name']);
+define('DB_NAME', (!empty($_ENV['AK_DB_ENV_name']) ? $_ENV['AK_DB_ENV_name'] : $_SERVER['AK_DB_ENV_name']));
 
 /** MySQL database username */
-define('DB_USER', $_SERVER['DB_ENV_user']);
+define('DB_USER', (!empty($_ENV['AK_DB_ENV_user']) ? $_ENV['AK_DB_ENV_user'] : $_SERVER['AK_DB_ENV_user']));
 
 /** MySQL database password */
-define('DB_PASSWORD', $_SERVER['DB_ENV_password']);
+define('DB_PASSWORD', (!empty($_ENV['AK_DB_ENV_password']) ? $_ENV['AK_DB_ENV_password'] : $_SERVER['AK_DB_ENV_password']));
 
 /** MySQL hostname */
-define('DB_HOST', $_SERVER['DB_ENV_host']);
+define('DB_HOST', (!empty($_ENV['AK_DB_ENV_host']) ? $_ENV['AK_DB_ENV_host'] : $_SERVER['AK_DB_ENV_host']));
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
