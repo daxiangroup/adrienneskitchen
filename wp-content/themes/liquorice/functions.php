@@ -1,6 +1,4 @@
 <?php
-update_option('siteurl',$_SERVER['HTTP_HOST']);
-update_option('home',$_SERVER['HTTP_HOST']);
 /** 
 *
 * Liquorice Theme functions
