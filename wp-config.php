@@ -14,9 +14,6 @@
  * @package WordPress
  */
 
-//define('WP_HOME',$_SERVER['HTTP_HOST']);
-//define('WP_SITEURL',$_SERVER['HTTP_HOST']);
-
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', (!empty($_ENV['AK_DB_ENV_name']) ? $_ENV['AK_DB_ENV_name'] : $_SERVER['AK_DB_ENV_name']));
