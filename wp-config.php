@@ -14,6 +14,11 @@
  * @package WordPress
  */
 
+$_ENV['AK_DB_ENV_name'] = 'adrienneskitchen';
+$_ENV['AK_DB_ENV_user'] = 'adrienneskitchen';
+$_ENV['AK_DB_ENV_password'] = 'wh4t3v3r';
+$_ENV['AK_DB_ENV_host'] = 'localhost';
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', (!empty($_ENV['AK_DB_ENV_name']) ? $_ENV['AK_DB_ENV_name'] : $_SERVER['AK_DB_ENV_name']));
