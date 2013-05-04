@@ -7,17 +7,21 @@ Version: 1.0
 Tags: Clean
 */
 
-html {
+html, body {
     background: #ddd;
-    min-height: 100%;
-}
-body {
-    position: relative;
     background: #ddd url(img/bg_site.png) repeat-x top center;
-    height: 100%;
+    height: auto !important;
+    min-height: 100%;
 }
 
 .site-width { width: 980px; }
+.site-wrapper {
+    position: relative;
+    margin: 0 auto;
+    padding-top: 60px;
+    height: 100%;
+}
+
 
 #header {
     position: fixed;
@@ -44,10 +48,13 @@ body {
             width: 250px;
         }
 
+#site-wrapper {}
+
     #branding {
         position: relative;
         width: 450px;
         height: 161px;
+        top: 4px;
         background: url(img/logo.png);
     }
     #neon-sign {
@@ -59,13 +66,22 @@ body {
         background: url(img/neon-sign.png);
     }
 
-.site-wrapper {
-    position: relative;
-    margin: 0 auto;
-    padding-top: 60px;
-    outline: solid 1px #000;
-    height: 100%;
-}
+    #main {
+        outline: solid 1px #c00;
+    }
+
+        #container {
+            width: 720px;
+            outline: solid 1px #0c0;
+            float: left;
+        }
+
+        #primary {
+            width: 260px;
+            height: 300px;
+            outline: solid 1px #00c;
+            float: left;
+        }
 
 /*****[ Various Classes ]******************************************************/
 
