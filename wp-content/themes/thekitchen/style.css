@@ -7,11 +7,26 @@ Version: 1.0
 Tags: Clean
 */
 
+*:active {
+    border: none;
+}
+
 html, body {
+    position: relative;
     background: #ddd;
-    background: #ddd url(img/bg_site.png) repeat-x top center;
+    background: #ddd url(img/bg_site.png) repeat-x top center fixed;
     height: auto !important;
     min-height: 100%;
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+
+a:active, a:link, a:visited {
+    text-decoration: none;
+    color: #000;
+}
+a:hover {
+    color: #EB919E;
 }
 
 .site-width { width: 980px; }
@@ -28,27 +43,122 @@ html, body {
     width: 100%;
     height: 45px;
     background-image: url(img/bg_header-bar.png);
+    z-index: 100;
 }
-    .site-navigation {
+    #masthead {
         position: relative;
+        margin: 0 auto;
+        height: 45px;
+    }
+
+    .site-navigation {
+        position: absolute;
+        top: 0px;
         height: 45px;
         margin: 0 auto;
     }
+        .site-navigation ul {
+            margin: 0px;
+            list-style: none;
+        }
+        .site-navigation > ul {
+            float: left;
+            margin-left: -38px;
+        }
+            .site-navigation > ul > li {
+                font-family: 'Advent Pro';
+                font-size: 26px;
+                color: #999;
+                border: solid 1px transparent;
+            }
+            .site-navigation > ul > li:hover {
+                color: #fff;
+            }
+            .site-navigation ul ul {
+                display: none;
+                margin-left: 1px;
+                padding: 3px 0;
+                background-color: #333;
+            }
+                .site-navigation ul ul > li {
+                    background-color: #333;
+                    color: #ccc;
+                    font-family: 'Roboto';
+                    font-size: 14px;
+                }
+                    .site-navigation ul ul > li div {
+                        display: inline-block;
+                        width: 175px;
+                        max-width: 100%;
+                        border-top: solid 1px transparent;
+                        border-bottom: solid 1px transparent;
+                        padding-left: 10px;
+                    }
+                    .site-navigation ul ul > li div:hover {
+                        background-color: #666;
+                        border-top: solid 1px #888;
+                        border-bottom: solid 1px #888;
+                        padding-left: 15px;
+                        width: 159px;
+                    }
+                        #btn-tags ul > li div:hover {
+                            width: 104px;
+                        }
+                    .site-navigation ul ul > li a {
+                        color: #999;
+                    }
+                    .site-navigation ul ul > li a:hover {
+                        color: #fff;
+                    }
+            .site-navigation > ul > li:hover ul {
+                display: block;
+            }
 
         .site-navigation .button {
             height: 45px;
             background: url(img/bg_header-separator.png) no-repeat top left;
             float: left;
+            cursor: pointer;
         }
+            .site-navigation .button div {
+                margin-top: 5px;
+            }
+            .site-navigation .button img {
+                width: 30px;
+                margin: 8px 15px 0 15px;
+                float: left;
+            }
 
         #btn-home {
+            position: relative;
             width: 60px;
         }
-        #btn-tags {
-            width: 250px;
+        #btn-categories {
+            width: 175px;
         }
+        #btn-tags {
+            width: 120px;
+        }
+        #btn-search input {
+            width: 250px;
+            float: left;
+            margin: 8px 8px 0 15px;
+            font-size: 14pt;
+        }
+        #btn-search-submit {
+            width: 35px !important;
+            height: 35px;
+            margin: 6px 15px 0 0;
+            background: transparent;
+            border: none;
+        }
+            #btn-search-submit img {
+                margin: 0px;
+            }
 
-#site-wrapper {}
+#site-wrapper {
+    position: relative;
+}
 
     #branding {
         position: relative;
@@ -58,35 +168,334 @@ html, body {
         background: url(img/logo.png);
     }
     #neon-sign {
-        position: absolute;
-        width: 340px;
+        position: relative;
+        top: 0px;
         height: 260px;
-        top:0px;
-        right: 0px;
-        background: url(img/neon-sign.png);
+        background: url(img/neon-sign.png) no-repeat top right;
+        margin: 0 auto;
     }
 
     #main {
-        outline: solid 1px #c00;
+        position: relative;
+        margin-top: 17px;
     }
 
         #container {
-            width: 720px;
-            outline: solid 1px #0c0;
+            position: relative;
+            width: 718px;
+            /* outline: solid 1px #0c0; */
+            float: left;
+            margin-bottom: 100px;
+            clear: both;
+        }
+        #container.bordered {
+            background-color: #fff;
+            border: 1px solid #999;
+        }
+            #content {
+                position: relative;
+                background-color: #fff;
+                float: right;
+                padding: 20px;
+            }
+                #content.recipe-content {
+                    width: 640px;
+                    max-width: 600px;
+                    margin-top: -78px;
+                }
+
+        #side-panels {
+            position: relative;
+            padding-top:30px;
+            width: 240px;
+            height: 300px;
+            float: left;
+            margin-left: 20px;
+        }
+            #side-panels .content {
+                width: 240px;
+                position: relative;
+            }
+            #side-panels .content.fixed {
+                position: fixed;
+                top: -100px;
+            }
+
+.content-panel {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.site-panel {
+    border: solid 1px #999;
+    background-color: #fff;
+    padding: 5px;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+    .panel-banner {
+        position: relative;
+        background-color: #333;
+        margin: 0 0 8px 4px;
+        display: inline-block;
+    }
+        .panel-banner span {
+            position: relative;
+            background-color: #c00;
+            top: -4px;
+            left: -4px;
+            padding: 0 16px;
+            font-size: 20px;
+            background-color: #eb919e;
+        }
+/*****[ Categories/Tags ]******************************************************/
+.category-tag-title {
+    position: relative;
+    margin: 0 0 20px 40px;
+    top: -20px;
+}
+/*****[ Recipes ]**************************************************************/
+.vitals {
+}
+
+.ctr-hero-image {
+    width: 718px;
+    height: 480px;
+    overflow: hidden;
+}
+    .hero-image {}
+
+.recipe-title {
+    position: absolute;
+    width: 600px;
+    top: -220px;
+    float: left;
+}
+    .recipe-title h1, .category-tag-title h1 {
+        font-family: 'Advent Pro';
+        font-weight: 400;
+        font-size: 42px;
+        line-height: 70px;
+        padding: 0 5px;
+        background-color: rgba(235, 145, 158, 0.8);
+        color: #333;
+        float: left;
+        margin-bottom: 10px;
+    }
+    .recipe-title .posted {
+        background-color: rgba(51, 51, 51, 0.8);
+        color: #fff;
+        font-family: 'Roboto';
+        font-weight: 200;
+        padding: 0 15px;
+        margin-left: 20px;
+        float: left;
+        clear: both;
+    }
+
+.recipe-banner {
+    position: relative;
+    border-left: dotted 1px #666;
+    height: 60px;
+    padding-top: 15px;
+    margin-left: -21px;
+}
+    .recipe-anchor {
+        position: absolute;
+        top: -45px;
+    }
+
+    .recipe-banner .title {
+        position: relative;
+        border-bottom: dotted 1px #666;
+        height: 30px;
+    }
+
+        .recipe-banner .title div {
+            margin-left: -16px;
+            line-height: 30px;
+            background-color: #eb919e;
+            padding-right: 16px;
+            font-size: 20px;
             float: left;
         }
 
-        #primary {
-            width: 260px;
-            height: 300px;
-            outline: solid 1px #00c;
+        .recipe-banner .title div:after {
+            position: relative;
+            content: "";
+            top: 30px;
             float: left;
+            width: 0;
+            height: 0;
+            border-top: 15px solid #666;
+            border-left: 15px solid transparent;
+        }
+
+.recipe-description .highlight-intro {
+    font-family: 'Advent Pro';
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #000;
+}
+
+.recipe-ingredients {
+    position: relative;
+    clear: both;
+    margin-bottom: 36px;
+}
+
+.recipe-box {
+    position: relative;
+    float: left;
+    width: 349px;
+    margin: 0 20px 20px 0;
+    background-color: #fff;
+    font-size: 14px;
+}
+.recipe-box.even {
+    margin-right: 0px;
+}
+    .recipe-box h2 {
+        margin: 0px;
+        font-family: 'Advent Pro';
+        font-size: 26px;
+        font-weight: 400;
+    }
+    .recipe-box:hover h2 {
+        color: #EB919E;
+    }
+    .recipe-box .img {
+        position: relative;
+        overflow: hidden;
+        height: 220px;
+    }
+        .recipe-box .img img {
+            position: absolute;
+        }
+    .recipe-box .content {
+        padding: 20px;
+        height: 250px;
+    }
+        .recipe-box .content img {
+            width: 16px;
+            margin: -1px 4px 0 0;
+        }
+        .recipe-box .info {
+            position: absolute;
+            bottom: 20px;
+            overflow: auto;
+        }
+        .recipe-box .categories, .recipe-box .tags {
+            font-size: 12px;
+        }
+        .recipe-box .categories {
+            margin-bottom: 2px;
+        }
+
+.ingredient-row {
+    clear: both;
+}
+    .ingredient-row div {
+        float: left;
+    }
+    .ingredient-row .amount, .ingredient-row .measurement {
+        margin-right: 5px;
+    }
+    .ingredient-row .amount {
+        width: 45px;
+        text-align: center;
+    }
+
+.instruction-row {
+    position: relative;
+    overflow: auto;
+    margin-bottom: 20px;
+}
+    .instruction-row .step {
+        font-weight: 400;
+        margin-bottom: 10px;
+        clear: both;
+        border-bottom: solid 1px #ddd;
+    }
+    .instruction-row .instruction {
+        margin-left: 20px;
+    }
+    .instruction-row img {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border: solid 1px #999;
+        background-color: #fff;
+        padding: 4px;
+    }
+    .instruction-row .instruction img.left {
+        float: left;
+        margin: 0 10px 10px 0;
+    }
+    .instruction-row .instruction img.right {
+        float: right;
+        margin: 0 0 10px 10px;
+    }
+
+.scrolled-sub-navigation {
+    position: fixed;
+    background-color: #333;
+    top: -100px;
+    left: 501px;
+    padding: 5px 0;
+}
+    .scrolled-sub-navigation ul {
+        list-style: none;
+        margin: 0 0 0 20px;
+        padding: 0px;
+    }
+    .scrolled-sub-navigation li {
+        float: left;
+        margin: 0 20px 0 0px;
+        border-right: solid 1px #555;
+    }
+        .scrolled-sub-navigation li a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+    .scrolled-sub-navigation li.last {
+        border-right: none;
+    }
+        .scrolled-sub-navigation li.last a {
+            margin-right: 0px;
         }
 
 /*****[ Various Classes ]******************************************************/
 
 .shadow-down {
-  -moz-box-shadow:    0px 1px 3px 2px #333;
-  -webkit-box-shadow: 0px 1px 3px 2px #333;
-  box-shadow:         0px 1px 3px 2px #333;
+    -moz-box-shadow:    0px 1px 3px 2px #333;
+    -webkit-box-shadow: 0px 1px 3px 2px #333;
+    box-shadow:         0px 1px 3px 2px #333;
+}
+
+.shadow-all {
+    /*
+    -moz-box-shadow:    0px 1px 3px 2px #333, -1px -1px 3px 2px #333;
+    -webkit-box-shadow: 0px 1px 3px 2px #333, -1px -1px 3px 2px #333;
+    box-shadow:         0px 1px 3px 2px #333, -1px -1px 3px 2px #333;
+  /*
+    -moz-box-shadow:    0px 1px 3px 2px #333;
+    -webkit-box-shadow: 0px 1px 3px 2px #333;
+    box-shadow:         0px 1px 3px 2px #333;
+    */
+    -moz-box-shadow:    0px 0px 8px 2px #999;
+    -webkit-box-shadow: 0px 0px 8px 2px #999;
+    box-shadow:         0px 0px 8px 2px #999;
+
+/*
+-webkit-box-shadow: 3px 3px 3px -3px #333, 3px 3px 3px -3px #333, -3px 3px 3px -3px #333;
+
+-moz-box-shadow:    3px 3px 3px -3px #333, 3px 3px 3px -3px #333, -3px 3px 3px -3px #333;
+
+box-shadow:         3px 3px 3px -3px #333, 3px 3px 3px -3px #333, -3px 3px 3px -3px #333
+*/
 }

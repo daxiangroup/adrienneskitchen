@@ -1,0 +1,110 @@
+<?php
+    get_header();
+
+    $category_ID = get_query_var('cat');
+
+    $query = new WP_Query(array(
+        'post_type' => 'recipe',
+        'cat' => $category_ID,
+        'orderby' => 'ID',
+        'order' => 'desc',
+    ));
+    //die('<pre>'.print_r($query,true));
+
+    /* Restore original Post Data */
+    wp_reset_postdata();
+?>
+
+<div id="container" class="shadow-all bordered">
+    <p>Category: <?php single_cat_title(); ?></p>
+
+    <div id="content">
+        HERE WE ARE - category.php
+        <hr>
+        <?php
+        while ($query->have_posts() ) {
+
+            $query->the_post();
+        ?>
+            <?php //die('<pre>'.print_r($category,true)); ?>
+        <div class="recipe-box bordered shadow-all">
+            <div class="img">
+                <a href="<?php echo the_permalink(); ?>">
+                    <?php ak_post_image($post->ID, 'recipe-hero-200'); ?>
+                </a>
+            </div>
+            <div class="content">
+                <?php the_title(); ?>
+                <?php the_content(); ?>
+            </div>
+        </div>
+        <?php
+        }
+        ?>
+    </div><!-- #content -->
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+HI!
+</div><!-- #container -->
+
+<div id="side-panels" class="widget-area">
+    <div class="content">
+        dah!
+    </div>
+</div>
+
+<?php get_footer(); ?>

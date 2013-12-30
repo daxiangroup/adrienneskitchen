@@ -9,8 +9,10 @@
     </div><!-- #wrapper -->
 
     <script src="<?php echo bloginfo('stylesheet_directory'); ?>/js/vendor/jquery-1.9.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="<?php echo bloginfo('stylesheet_directory'); ?>/js/plugins.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+
+    <?php wp_footer(); ?>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

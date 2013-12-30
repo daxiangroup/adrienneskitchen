@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/normalize.css">
     <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/main.css">
     <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/style.css">
+    <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/roboto.css">
     <script src="<?php echo bloginfo('stylesheet_directory'); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
@@ -23,16 +24,40 @@
     <![endif]-->
 
     <div id="header" class="shadow-down">
-        <div id="masthead">
+        <div id="masthead" class="site-width">
+            <div id="neon-sign" class="site-width"></div>
             <div id="access" class="site-width site-navigation">
-                <div id="btn-home" class="button"> H </div>
-                <div id="btn-tags" class="button"> T </div>
+                <ul>
+                    <li id="btn-home" class="button" title="Bring me home!">
+                        <a href="<?php echo site_url(); ?>">
+                            <img src="<?php echo bloginfo('stylesheet_directory'); ?>/img/1.png">
+                        </a>
+                    </li>
+                    <li id="btn-categories" class="button" title="Recipe Categories">
+                        <img src="<?php echo bloginfo('stylesheet_directory'); ?>/img/281.png" />
+                        <div>Categories</div>
+                        <?php ak_list_categories(); ?>
+                    </li>
+                    <li id="btn-tags" class="button" title="Recipe Tags">
+                        <img src="<?php echo bloginfo('stylesheet_directory'); ?>/img/432.png" />
+                        <div>Tags</div>
+                        <?php ak_list_tags(); ?>
+                    </li>
+                    <li id="btn-search" class="button">
+                        <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+                            <input type="text" name="s" id="box-search" />
+                            <button type="submit" id="btn-search-submit">
+                                <img src="<?php echo bloginfo('stylesheet_directory'); ?>/img/241.png" />
+                            </button>
+                        </form>
+                    </li>
+                </ul>
             </div><!-- #access -->
         </div><!-- #masthead -->
+
     </div><!-- #header -->
 
     <div id="wrapper" class="site-wrapper site-width hfeed">
         <div id="branding"></div>
-        <div id="neon-sign"></div>
 
         <div id="main">
