@@ -33,22 +33,22 @@
                             <img src="<?php echo bloginfo('stylesheet_directory'); ?>/img/1.png">
                         </a>
                     </li>
-                    <li id="btn-categories" class="button" title="Recipe Categories">
+                    <li id="btn-categories" class="button">
                         <img src="<?php echo bloginfo('stylesheet_directory'); ?>/img/281.png" />
                         <div>Categories</div>
                         <?php ak_list_categories(); ?>
                     </li>
-                    <li id="btn-tags" class="button" title="Recipe Tags">
+                    <li id="btn-tags" class="button">
                         <img src="<?php echo bloginfo('stylesheet_directory'); ?>/img/432.png" />
                         <div>Tags</div>
                         <?php ak_list_tags(); ?>
                     </li>
                     <li id="btn-search" class="button">
                         <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-                            <input type="text" name="s" id="box-search" />
                             <button type="submit" id="btn-search-submit">
                                 <img src="<?php echo bloginfo('stylesheet_directory'); ?>/img/241.png" />
                             </button>
+                            <input type="text" name="s" id="box-search" />
                         </form>
                     </li>
                 </ul>

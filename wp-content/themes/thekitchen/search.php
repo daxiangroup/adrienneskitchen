@@ -1,11 +1,9 @@
 <?php
     get_header();
 
-    $tag_ID = get_query_var('tag_id');
-
     $query = new WP_Query(array(
         'post_type' => 'recipe',
-        'tag_id' => $tag_ID,
+        's' => $_GET['s'],
         'orderby' => 'ID',
         'order' => 'desc',
     ));
@@ -15,7 +13,7 @@
 ?>
 
 <div class="category-tag-title">
-    <h1>Tag: <?php single_cat_title(); ?></h1>
+    <h1>Search: <?php echo $_GET['s']; ?></h1>
 </div>
 
 <div id="container" class="front-page">

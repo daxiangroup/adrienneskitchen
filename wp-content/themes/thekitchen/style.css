@@ -102,7 +102,7 @@ a:hover {
                         width: 159px;
                     }
                         #btn-tags ul > li div:hover {
-                            width: 104px;
+                            width: 134px;
                         }
                     .site-navigation ul ul > li a {
                         color: #999;
@@ -137,20 +137,21 @@ a:hover {
             width: 175px;
         }
         #btn-tags {
-            width: 120px;
+            width: 150px;
         }
         #btn-search input {
-            width: 250px;
+            width: 175px;
             float: left;
-            margin: 8px 8px 0 15px;
+            margin: 8px 15px 0 0;
             font-size: 14pt;
         }
         #btn-search-submit {
             width: 35px !important;
             height: 35px;
-            margin: 6px 15px 0 0;
+            margin: 8px 15px 0 15px;
             background: transparent;
             border: none;
+            float: left;
         }
             #btn-search-submit img {
                 margin: 0px;
@@ -203,6 +204,15 @@ a:hover {
                     max-width: 600px;
                     margin-top: -78px;
                 }
+                    #content.recipe-content a, .recipe-box .content a {
+                        border-bottom: solid 1px #EB919E;
+                    }
+                    #content.recipe-content a:hover, .recipe-box .content a:hover {
+                        border-bottom: solid 1px transparent;
+                    }
+                    .recipe-box .content .info a {
+                        border-bottom: none;
+                    }
 
         #side-panels {
             position: relative;
@@ -218,7 +228,7 @@ a:hover {
             }
             #side-panels .content.fixed {
                 position: fixed;
-                top: -100px;
+                /*top: -100px;*/
             }
 
 .content-panel {
@@ -258,6 +268,25 @@ a:hover {
 /*****[ Recipes ]**************************************************************/
 .vitals {
 }
+    .vital-label, .vital-data {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .vital-label {
+        text-align: center;
+    }
+    .vital-data {
+        text-align: center;
+        font: 400 22px 'Advent Pro';
+        border-bottom: dotted 1px #000;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+    .vital-data:last-of-type {
+        border-bottom: none;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
 
 .ctr-hero-image {
     width: 718px;

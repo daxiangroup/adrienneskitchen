@@ -99,6 +99,61 @@ function ak_recipe_instructions($instructions)
     }
 }
 
+function ak_favourite_recipes()
+{
+    $args = array(
+        'post_type' => 'recipe',
+        'cat' => '87',
+        'orderby' => 'date',
+        'order' => 'DESC',
+    );
+
+    $favourite_recipes = new WP_Query($args);
+
+    if ($favourite_recipes->have_posts()) {
+        ?>
+        <ul class="favourite-posts">
+            <?php
+            while ($favourite_recipes->have_posts()) : $favourite_recipes->the_post();
+            ?>
+                <li>
+                    <a href="<?php the_permalink() ?>" > <?php the_title();?> </a>
+                </li>
+            <?php
+            endwhile;
+            ?>
+        </ul>
+        <?php
+    }
+}
+
+function ak_recent_recipes()
+{
+    $args = array(
+        'post_type' => 'recipe',
+        'orderby' => 'date',
+        'order' => 'DESC',
+    );
+
+    $recent_recipes = new WP_Query($args);
+
+    if ($recent_recipes->have_posts()) {
+        ?>
+        <ul class="recent-posts">
+            <?php
+            while ($recent_recipes->have_posts()) : $recent_recipes->the_post();
+            ?>
+                <li>
+                    <a href="<?php the_permalink() ?>" > <?php the_title();?> </a>
+                </li>
+            <?php
+            endwhile;
+            ?>
+        </ul>
+        <?php
+    }
+}
+
 function ak_related_recipes($postID, $hasPosts = false)
 {
     $tags = wp_get_post_tags($postID);
@@ -218,16 +273,6 @@ function ak_post_content($ID)
         return substr($post->post_content, 0, 250).'...';
     }
     return $post->post_content;
-/*
-    $postContent = explode(' ', $post->post_content);
-    $elipsis = '';
-    if (count($postContent) > 50) {
-        $postContent = array_slice($postContent, 0, 50);
-        $elipsis = '...';
-    }
-
-    return implode(' ', $postContent).$elipsis;
-    */
 }
 
 function ak_post_categories($ID)
@@ -236,7 +281,7 @@ function ak_post_categories($ID)
     foreach($categories as $category){
         $category = get_category($category);
         if ($category->term_id == 74) { continue; }
-        //$cats[] = array('name'=>$category->name, 'slug'=>$category->slug);
+
         $out[] = '<a href="'.get_category_link($category->term_id).'">'.$category->name.'</a>';
     }
 
@@ -251,4 +296,10 @@ function ak_post_tags($ID)
     }
 
     echo implode(', ', $out);
+}
+
+function ak_recipress_recipe($column, $measure) {
+    $value = recipress_recipe($column, $measure);
+
+    return $value == '' ? 'N/A' : $value;
 }

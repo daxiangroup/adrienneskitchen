@@ -43,9 +43,19 @@
 
 <div id="side-panels" class="widget-area">
     <div class="content">
-        <div class="panel-banner"><span>Where To Go</span></div>
+        <div class="panel-banner"><span>Jump To</span></div>
         <div class="sub-navigation site-panel">
             <?php ak_recipe_sub_navigation(); ?>
+        </div>
+
+        <div class="panel-banner stopper"><span>Timing</span></div>
+        <div class="vitals site-panel">
+            <div class="vital-label">Prep Time</div>
+            <div class="vital-data"><?php echo ak_recipress_recipe('prep_time', 'mins'); ?></div>
+            <div class="vital-label">Cook Time</div>
+            <div class="vital-data"><?php echo ak_recipress_recipe('cook_time', 'mins') ; ?></div>
+            <div class="vital-label">Ready In</div>
+            <div class="vital-data"><?php echo ak_recipress_recipe('ready_time', 'mins'); ?></div>
         </div>
 
         <div class="panel-banner"><span>Vitals</span></div>
@@ -53,9 +63,6 @@
             Cuisine: <?php echo recipress_recipe('cuisine'); ?> <br />
             Course: <?php echo recipress_recipe('course'); ?> <br />
             Skill: <?php echo recipress_recipe('skill_level'); ?> <br />
-            Prep Time: <?php echo recipress_recipe('prep_time', 'mins'); ?> <br />
-            Cook Time: <?php echo recipress_recipe('cook_time', 'mins'); ?> <br />
-            Ready Time: <?php echo recipress_recipe('ready_time', 'mins'); ?> <br />
             Yield: <?php echo recipress_recipe('yield'); ?> <br />
             Categories: <?php echo ak_post_categories($post->ID); ?> <br />
             Tags: <?php echo ak_post_tags($post->ID); ?> <br />

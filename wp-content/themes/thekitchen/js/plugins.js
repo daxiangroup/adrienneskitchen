@@ -18,14 +18,21 @@ var SiteWidget = {
         sidePanels: $('#side-panels .content'),
         sidePanelsOffset: Number($('#side-panels .content').css('top').replace(/[^-\d\.]/g, '')),
         scrolledSubNavigation: $('#container .scrolled-sub-navigation'),
-        scrolledSubNavigationKeypointMax: -368,
+        //scrolledSubNavigationKeypointMax: -368,
+        scrolledSubNavigationKeypointMagic: 17,
         scrolledSubNavigationVisiblePoint: $('#access').height(),
+        scrolledSubNavigationKeypointMax: ((parseInt($('#side-panels .content .stopper').offset().top) - 17 - $('#access').height()) * -1),
     },
 
     init: function() {
         var obj = this.settings;
         this.bindScrollingActions();
         this.scrollingActions();
+        /*
+        alert($('#side-panels .content .stopper').offset().top);
+        alert($('#side-panels .content').offset().top);
+        alert( $('#side-panels .content .stopper').offset().top - $('#side-panels .content').offset().top);
+        */
     },
 
     scrollingActions: function() {
@@ -37,15 +44,18 @@ var SiteWidget = {
 
         if (scroller <= obj.scrolledSubNavigationKeypointMax) {
             obj.sidePanels.addClass('fixed');
+            //obj.sidePanels.css('top', (obj.scrolledSubNavigationVisiblePoint + obj.scrolledSubNavigationKeypointMagic) + 'px');
+            obj.sidePanels.css('top', (($('#side-panels .content .stopper').offset().top - $('#side-panels .content').offset().top - obj.scrolledSubNavigationVisiblePoint - obj.scrolledSubNavigationKeypointMagic) * -1) + 'px');
         }
         else {
             obj.sidePanels.removeClass('fixed');
+            obj.sidePanels.css('top', '');
         }
 
         var scrolledSubNavigationHeight = obj.scrolledSubNavigation.outerHeight();
         var scrolledSubNavigationKeypointMin = obj.scrolledSubNavigationKeypointMax + scrolledSubNavigationHeight;
         var scrolledSubNavigationHiddenPoint = obj.scrolledSubNavigationVisiblePoint - scrolledSubNavigationHeight;
-        var scrolledSubNavigationDifference = scrolledSubNavigationHiddenPoint + obj.scrolledSubNavigationKeypointMax;
+//        var scrolledSubNavigationDifference = scrolledSubNavigationHiddenPoint + obj.scrolledSubNavigationKeypointMax;
 
         if (scroller <= scrolledSubNavigationKeypointMin && scroller >= obj.scrolledSubNavigationKeypointMax) {
             //var offset = Math.abs(scroller) + scrolledSubNavigationKeypointMin - 3;
@@ -53,7 +63,7 @@ var SiteWidget = {
             //var offset = Math.abs(scroller) - 316;
             obj.scrolledSubNavigation.css('top', offset + 'px');
         }
-/*
+
 console.log('Scroller: ' + scroller);
 console.log('Offset: ' + offset);
 console.log('Height: ' + scrolledSubNavigationHeight);
@@ -64,7 +74,7 @@ console.log('KeypointMin: ' + scrolledSubNavigationKeypointMin);
 console.log('KeypointMax: ' + obj.scrolledSubNavigationKeypointMax);
 console.log('HiddenPoint: ' + scrolledSubNavigationHiddenPoint);
 console.log('--------------------------------');
-*/
+
 
         if (scroller < obj.scrolledSubNavigationKeypointMax) {
             obj.scrolledSubNavigation.css('top', String(obj.scrolledSubNavigationVisiblePoint + 'px'));
