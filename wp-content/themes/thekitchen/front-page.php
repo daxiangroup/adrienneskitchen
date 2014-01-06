@@ -55,7 +55,7 @@
 
 <div id="side-panels" class="widget-area">
     <div class="content">
-        <div class="panel-banner stopper"><span>Recent</span></div>
+        <div class="panel-banner"><span>Recent</span></div>
         <div class="sub-navigation site-panel">
             <?php ak_recent_recipes(); ?>
         </div>

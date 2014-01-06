@@ -29,11 +29,13 @@ a:hover {
     color: #EB919E;
 }
 
-.site-width { width: 980px; }
+.site-width {
+    width: 61.25rem; /* 980px */
+}
 .site-wrapper {
     position: relative;
     margin: 0 auto;
-    padding-top: 60px;
+    padding-top: 3.75rem; /* 60px */
     height: 100%;
 }
 
@@ -41,68 +43,67 @@ a:hover {
 #header {
     position: fixed;
     width: 100%;
-    height: 45px;
+    height: 2.8125rem; /* 45px */
     background-image: url(img/bg_header-bar.png);
     z-index: 100;
 }
     #masthead {
         position: relative;
         margin: 0 auto;
-        height: 45px;
+        height: 2.8125rem; /* 45px */
     }
 
     .site-navigation {
         position: absolute;
-        top: 0px;
-        height: 45px;
+        top: 0rem;
+        height: 2.8125rem; /* 45px */
         margin: 0 auto;
     }
         .site-navigation ul {
-            margin: 0px;
+            margin: 0rem;
             list-style: none;
         }
         .site-navigation > ul {
             float: left;
-            margin-left: -38px;
         }
             .site-navigation > ul > li {
                 font-family: 'Advent Pro';
-                font-size: 26px;
+                font-size: 1.625rem; /* 26px */
                 color: #999;
-                border: solid 1px transparent;
+                border: solid .0625rem transparent; /* 1px */
             }
             .site-navigation > ul > li:hover {
                 color: #fff;
             }
             .site-navigation ul ul {
                 display: none;
-                margin-left: 1px;
-                padding: 3px 0;
+                margin-left: .0625rem; /* 1px */
+                padding: .1875rem 0; /* 3px 0 */
                 background-color: #333;
             }
                 .site-navigation ul ul > li {
                     background-color: #333;
                     color: #ccc;
                     font-family: 'Roboto';
-                    font-size: 14px;
+                    font-size: .875rem; /* 14px */
                 }
                     .site-navigation ul ul > li div {
                         display: inline-block;
-                        width: 175px;
+                        width: 10.9375rem; /* 175px */
                         max-width: 100%;
-                        border-top: solid 1px transparent;
-                        border-bottom: solid 1px transparent;
-                        padding-left: 10px;
+                        border-top: solid .0625rem transparent; /* 1px */
+                        border-bottom: solid .0625rem transparent; /* 1px */
+                        padding-left: .625rem; /* 10px */
                     }
                     .site-navigation ul ul > li div:hover {
                         background-color: #666;
-                        border-top: solid 1px #888;
-                        border-bottom: solid 1px #888;
-                        padding-left: 15px;
-                        width: 159px;
+                        border-top: solid .0625rem #888; /* 1px */
+                        border-bottom: solid .0625rem #888; /* 1px */
+                        padding-left: .9375rem; /* 15px */
+                        width: 10.9375rem; /* 175px */
                     }
                         #btn-tags ul > li div:hover {
-                            width: 134px;
+                            width: 9.375rem; /* 150px */
                         }
                     .site-navigation ul ul > li a {
                         color: #999;
@@ -114,47 +115,50 @@ a:hover {
                 display: block;
             }
 
-        .site-navigation .button {
-            height: 45px;
+        .site-navigation .btn {
+            height: 2.8125rem; /* 45px */
             background: url(img/bg_header-separator.png) no-repeat top left;
             float: left;
             cursor: pointer;
         }
-            .site-navigation .button div {
-                margin-top: 5px;
+            .site-navigation .btn div {
+                margin-top: .3125rem; /* 5px */
             }
-            .site-navigation .button img {
-                width: 30px;
-                margin: 8px 15px 0 15px;
+            .site-navigation .btn img {
+                width: 1.875rem; /* 30px */
+                height: 1.875rem; /* 30px */
+                margin: .5rem .9375rem 0 .9375rem; /* 8px 15px 0 15px */
                 float: left;
             }
 
         #btn-home {
             position: relative;
-            width: 60px;
+            width: 3.75rem; /* 60px */
         }
         #btn-categories {
-            width: 175px;
+            width: 10.9375rem; /* 175px */
         }
         #btn-tags {
-            width: 150px;
+            width: 9.375rem; /* 150px */
         }
         #btn-search input {
-            width: 175px;
+            width: 10.9375rem; /* 175px */
             float: left;
-            margin: 8px 15px 0 0;
-            font-size: 14pt;
+            margin: .5rem .9375rem 0 0; /* 8px 15px 0 0 */
+            font-size: 1.25rem; /* 20px */
         }
         #btn-search-submit {
-            width: 35px !important;
-            height: 35px;
-            margin: 8px 15px 0 15px;
+            width: 2.1875rem !important; /* 35px */
+            height: 2.1875rem; /* 35px */
+            margin: .5rem .9375rem 0 .9375rem; /* 8px 15px 0 15px */
+            padding-left: .1875rem; /* 3px */
+            padding-top: 0rem;
             background: transparent;
             border: none;
             float: left;
         }
             #btn-search-submit img {
-                margin: 0px;
+                margin: 0rem;
             }
 
 #site-wrapper {
@@ -163,52 +167,52 @@ a:hover {
 
     #branding {
         position: relative;
-        width: 450px;
-        height: 161px;
-        top: 4px;
+        width: 28.125rem; /* 450px */
+        height: 10.0625rem; /* 161px */
+        top: .25rem; /* 4px */
         background: url(img/logo.png);
     }
     #neon-sign {
         position: relative;
-        top: 0px;
-        height: 260px;
+        top: 0rem;
+        height: 16.25rem; /* 260px */
         background: url(img/neon-sign.png) no-repeat top right;
         margin: 0 auto;
     }
 
     #main {
         position: relative;
-        margin-top: 17px;
+        margin-top: 1.0625rem; /* 17px */
     }
 
         #container {
             position: relative;
-            width: 718px;
+            width: 44.875rem; /* 718px */
             /* outline: solid 1px #0c0; */
             float: left;
-            margin-bottom: 100px;
+            margin-bottom: 6.25rem; /* 100px */
             clear: both;
         }
         #container.bordered {
             background-color: #fff;
-            border: 1px solid #999;
+            border: .0625rem solid #999; /* 1px */
         }
             #content {
                 position: relative;
                 background-color: #fff;
                 float: right;
-                padding: 20px;
+                padding: 1.25rem; /* 20px */
             }
                 #content.recipe-content {
-                    width: 640px;
-                    max-width: 600px;
-                    margin-top: -78px;
+                    width: 40rem; /* 64px */
+                    max-width: 37.5rem; /* 600px */
+                    margin-top: -4.875rem; /* 78px */
                 }
                     #content.recipe-content a, .recipe-box .content a {
-                        border-bottom: solid 1px #EB919E;
+                        border-bottom: solid .0625rem #EB919E; /* 1px */
                     }
                     #content.recipe-content a:hover, .recipe-box .content a:hover {
-                        border-bottom: solid 1px transparent;
+                        border-bottom: solid .0625rem transparent; /* 1px */
                     }
                     .recipe-box .content .info a {
                         border-bottom: none;
@@ -216,14 +220,14 @@ a:hover {
 
         #side-panels {
             position: relative;
-            padding-top:30px;
-            width: 240px;
-            height: 300px;
+            padding-top: 1.875rem; /* 30px */
+            width: 15rem; /* 240px */
+            height: 18.75rem; /* 300px */
             float: left;
-            margin-left: 20px;
+            margin-left: 1.25rem; /* 20px */
         }
             #side-panels .content {
-                width: 240px;
+                width: 15rem; /* 240px */
                 position: relative;
             }
             #side-panels .content.fixed {
@@ -233,37 +237,37 @@ a:hover {
 
 .content-panel {
     background: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 1.25rem; /* 20px */
+    margin-bottom: 1.25rem; /* 20px */
 }
 
 .site-panel {
-    border: solid 1px #999;
+    border: solid .0625rem #999; /* 1px */
     background-color: #fff;
-    padding: 5px;
-    margin-bottom: 30px;
-    font-size: 14px;
+    padding: .3125rem; /* 5px */
+    margin-bottom: 1.875rem; /* 30px */
+    font-size: .875rem; /* 14px */
 }
     .panel-banner {
         position: relative;
         background-color: #333;
-        margin: 0 0 8px 4px;
+        margin: 0 0 .5rem .25rem; /* 0 0 8px 4px */
         display: inline-block;
     }
         .panel-banner span {
             position: relative;
             background-color: #c00;
-            top: -4px;
-            left: -4px;
-            padding: 0 16px;
-            font-size: 20px;
+            top: -.25rem; /* 4px */
+            left: -.25rem; /* 4px */
+            padding: 0 1rem; /* 0 16px */
+            font-size: 1.25rem; /* 20px */
             background-color: #eb919e;
         }
 /*****[ Categories/Tags ]******************************************************/
 .category-tag-title {
     position: relative;
-    margin: 0 0 20px 40px;
-    top: -20px;
+    margin: 0 0 1.25rem 2.5rem; /* 0 0 20px 40px */
+    top: -1.25rem; /* 20px */
 }
 /*****[ Recipes ]**************************************************************/
 .vitals {
@@ -277,120 +281,113 @@ a:hover {
     }
     .vital-data {
         text-align: center;
-        font: 400 22px 'Advent Pro';
-        border-bottom: dotted 1px #000;
-        margin-bottom: 10px;
-        padding-bottom: 10px;
+        font: 400 1.375rem 'Advent Pro'; /* 22px */
+        border-bottom: dotted .0625rem #000; /* 1px */
+        margin-bottom: .625rem; /* 10px */
+        padding-bottom: .625rem; /* 10px */
     }
     .vital-data:last-of-type {
         border-bottom: none;
-        margin-bottom: 0px;
-        padding-bottom: 0px;
+        margin-bottom: 0rem;
+        padding-bottom: 0rem;
     }
 
 .ctr-hero-image {
-    width: 718px;
-    height: 480px;
+    width: 44.875rem; /* 718px */
+    height: 30rem; /* 480px */
     overflow: hidden;
 }
     .hero-image {}
 
 .recipe-title {
     position: absolute;
-    width: 600px;
-    top: -220px;
+    width: 37.5rem; /* 600px */
+    top: -13.75rem; /* 220px */
     float: left;
 }
     .recipe-title h1, .category-tag-title h1 {
-        font-family: 'Advent Pro';
-        font-weight: 400;
-        font-size: 42px;
-        line-height: 70px;
-        padding: 0 5px;
+        font: 400 2.625rem 'Advent Pro'; /* 42px */
+        line-height: 4.375rem; /* 70px */
+        padding: 0 .3125rem; /* 0 5px */
         background-color: rgba(235, 145, 158, 0.8);
         color: #333;
         float: left;
-        margin-bottom: 10px;
+        margin-bottom: .625rem; /* 10px */
     }
     .recipe-title .posted {
         background-color: rgba(51, 51, 51, 0.8);
         color: #fff;
-        font-family: 'Roboto';
-        font-weight: 200;
-        padding: 0 15px;
-        margin-left: 20px;
+        font: 200 1rem 'Roboto';
+        padding: 0 .9375rem; /* 0 15px */
+        margin-left: 1.25rem; /* 20px */
         float: left;
         clear: both;
     }
 
 .recipe-banner {
     position: relative;
-    border-left: dotted 1px #666;
-    height: 60px;
-    padding-top: 15px;
-    margin-left: -21px;
+    border-left: dotted .0625rem #666; /* 1px */
+    height: 3.75rem; /* 60px */
+    padding-top: .9375rem; /* 15px */
+    margin-left: -1.3125rem; /* 21px */
 }
     .recipe-anchor {
         position: absolute;
-        top: -45px;
+        top: -2.8125rem; /* 45px */
     }
 
     .recipe-banner .title {
         position: relative;
-        border-bottom: dotted 1px #666;
-        height: 30px;
+        border-bottom: dotted .0625rem #666; /* 1px */
+        height: 1.875rem; /* 30px */
     }
 
         .recipe-banner .title div {
-            margin-left: -16px;
-            line-height: 30px;
+            margin-left: -1rem; /* 16px */
+            line-height: 1.875rem; /* 30px */
             background-color: #eb919e;
-            padding-right: 16px;
-            font-size: 20px;
+            padding-right: 1rem; /* 1px */
+            font-size: 1.25rem; /* 20px */
             float: left;
         }
 
         .recipe-banner .title div:after {
             position: relative;
             content: "";
-            top: 30px;
+            top: 1.875rem; /* 30px */
             float: left;
             width: 0;
             height: 0;
-            border-top: 15px solid #666;
-            border-left: 15px solid transparent;
+            border-top: .9375rem solid #666; /* 15px */
+            border-left: .9375rem solid transparent; /* 15px */
         }
 
 .recipe-description .highlight-intro {
-    font-family: 'Advent Pro';
-    font-size: 22px;
-    line-height: 24px;
-    font-weight: 400;
+    font: 400 1.375rem 'Advent Pro'; /* 22px */
+    line-height: 1.5rem; /* 24px */
     color: #000;
 }
 
 .recipe-ingredients {
     position: relative;
     clear: both;
-    margin-bottom: 36px;
+    margin-bottom: 2.25rem; /* 36px */
 }
 
 .recipe-box {
     position: relative;
     float: left;
-    width: 349px;
-    margin: 0 20px 20px 0;
+    width: 21.8125rem; /* 349px */
+    margin: 0 1.25rem 1.25rem 0; /* 0 20px 20px 0 */
     background-color: #fff;
-    font-size: 14px;
+    font-size: .875rem; /* 14px */
 }
 .recipe-box.even {
-    margin-right: 0px;
+    margin-right: 0rem;
 }
     .recipe-box h2 {
-        margin: 0px;
-        font-family: 'Advent Pro';
-        font-size: 26px;
-        font-weight: 400;
+        margin: 0rem;
+        font: 400 1.625rem 'Advent Pro'; /* 26px */
     }
     .recipe-box:hover h2 {
         color: #EB919E;
@@ -398,29 +395,29 @@ a:hover {
     .recipe-box .img {
         position: relative;
         overflow: hidden;
-        height: 220px;
+        height: 13.75rem; /* 220px */
     }
         .recipe-box .img img {
             position: absolute;
         }
     .recipe-box .content {
-        padding: 20px;
-        height: 250px;
+        padding: 1.25rem; /* 20px */
+        height: 15.625rem; /* 250px */
     }
         .recipe-box .content img {
-            width: 16px;
-            margin: -1px 4px 0 0;
+            width: 1rem; /* 16px */
+            margin: -.0625rem .25rem 0 0; /* -1px 4px 0 0 */
         }
         .recipe-box .info {
             position: absolute;
-            bottom: 20px;
+            bottom: 1.25rem; /* 20px */
             overflow: auto;
         }
         .recipe-box .categories, .recipe-box .tags {
-            font-size: 12px;
+            font-size: .75rem; /* 12px */
         }
         .recipe-box .categories {
-            margin-bottom: 2px;
+            margin-bottom: .125rem; /* 2px */
         }
 
 .ingredient-row {
@@ -430,80 +427,80 @@ a:hover {
         float: left;
     }
     .ingredient-row .amount, .ingredient-row .measurement {
-        margin-right: 5px;
+        margin-right: .3125rem; /* 5px */
     }
     .ingredient-row .amount {
-        width: 45px;
+        width: 2.8125rem; /* 45px */
         text-align: center;
     }
 
 .instruction-row {
     position: relative;
     overflow: auto;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem; /* 20px */
 }
     .instruction-row .step {
         font-weight: 400;
-        margin-bottom: 10px;
+        margin-bottom: .625rem; /* 10px */
         clear: both;
-        border-bottom: solid 1px #ddd;
+        border-bottom: solid .0625rem #ddd; /* 1px */
     }
     .instruction-row .instruction {
-        margin-left: 20px;
+        margin-left: 1.25rem; /* 20px */
     }
     .instruction-row img {
         position: relative;
-        width: 150px;
-        height: 150px;
-        border: solid 1px #999;
+        width: 9.375rem; /* 150px */
+        height: 9.375rem; /* 150px */
+        border: solid .0625rem #999; /* 1px */
         background-color: #fff;
-        padding: 4px;
+        padding: .25rem; /* 4px */
     }
     .instruction-row .instruction img.left {
         float: left;
-        margin: 0 10px 10px 0;
+        margin: 0 .625rem .625rem 0; /* 0 10px 10px 0 */
     }
     .instruction-row .instruction img.right {
         float: right;
-        margin: 0 0 10px 10px;
+        margin: 0 0 .625rem .625rem; /* 0 0 10px 10px */
     }
 
 .scrolled-sub-navigation {
     position: fixed;
     background-color: #333;
-    top: -100px;
-    left: 501px;
-    padding: 5px 0;
+    top: -6.25rem; /* 100px */
+    left: 31.3125rem; /* 501px */
+    padding: .3125rem 0; /* 5px 0 */
 }
     .scrolled-sub-navigation ul {
         list-style: none;
-        margin: 0 0 0 20px;
-        padding: 0px;
+        margin: 0 0 0 1.25rem; /* 0 0 0 20px */
+        padding: 0rem;
     }
     .scrolled-sub-navigation li {
         float: left;
-        margin: 0 20px 0 0px;
-        border-right: solid 1px #555;
+        margin: 0 1.25rem 0 0; /* 0 20px 0 0 */
+        border-right: solid .0625rem #555; /* 1px */
     }
         .scrolled-sub-navigation li a {
             color: #fff;
             text-decoration: none;
-            margin-right: 20px;
+            margin-right: 1.25rem; /* 20px */
             cursor: pointer;
         }
     .scrolled-sub-navigation li.last {
         border-right: none;
     }
         .scrolled-sub-navigation li.last a {
-            margin-right: 0px;
+            margin-right: 0rem;
         }
 
 /*****[ Various Classes ]******************************************************/
 
 .shadow-down {
-    -moz-box-shadow:    0px 1px 3px 2px #333;
-    -webkit-box-shadow: 0px 1px 3px 2px #333;
-    box-shadow:         0px 1px 3px 2px #333;
+    -moz-box-shadow:    0rem .0625rem .1875rem .125rem #333; /* 0 1px 3px 2px */
+    -webkit-box-shadow: 0rem .0625rem .1875rem .125rem #333; /* 0 1px 3px 2px */
+    box-shadow:         0rem .0625rem .1875rem .125rem #333; /* 0 1px 3px 2px */
 }
 
 .shadow-all {
@@ -516,9 +513,9 @@ a:hover {
     -webkit-box-shadow: 0px 1px 3px 2px #333;
     box-shadow:         0px 1px 3px 2px #333;
     */
-    -moz-box-shadow:    0px 0px 8px 2px #999;
-    -webkit-box-shadow: 0px 0px 8px 2px #999;
-    box-shadow:         0px 0px 8px 2px #999;
+    -moz-box-shadow:    0rem 0rem .5rem .125rem #999; /* 0 0 8px 2px */
+    -webkit-box-shadow: 0rem 0rem .5rem .125rem #999; /* 0 0 8px 2px */
+    box-shadow:         0rem 0rem .5rem .125rem #999; /* 0 0 8px 2px */
 
 /*
 -webkit-box-shadow: 3px 3px 3px -3px #333, 3px 3px 3px -3px #333, -3px 3px 3px -3px #333;
