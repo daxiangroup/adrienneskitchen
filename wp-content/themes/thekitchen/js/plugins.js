@@ -1,38 +1,27 @@
-/*$(document).ready(function(){
-    $(window).scroll(function(){
-        console.log($('#primary').scrollTop());
-        if ($('#primary').scrollTop() < 0) {
-            $('#primary').css({
-                'top': Math.max(0,45-$('#primary').scrollTop()),
-                'positoin': 'fixed'
-            });
-        }
-    });
-});
-*/
-
 var SiteWidget = {
     settings: {
         neonSign: $('#neon-sign'),
         neonSignOffset: Number($('#neon-sign').css('top').replace(/[^-\d\.]/g, '')),
         sidePanels: $('#side-panels .content'),
         sidePanelsOffset: Number($('#side-panels .content').css('top').replace(/[^-\d\.]/g, '')),
+        sidePanelsStopper: $('#side-panels .content .stopper'),
         scrolledSubNavigation: $('#container .scrolled-sub-navigation'),
         //scrolledSubNavigationKeypointMax: -368,
         scrolledSubNavigationKeypointMagic: 17,
         scrolledSubNavigationVisiblePoint: $('#access').height(),
-        scrolledSubNavigationKeypointMax: ((parseInt($('#side-panels .content .stopper').offset().top) - 17 - $('#access').height()) * -1),
+        scrolledSubNavigationKeypointMax: 0,
     },
 
     init: function() {
         var obj = this.settings;
+
+        // If we have a 'stopper' box in the #side-panels, then we want to do some
+        // setting of variables. Otherwise we'll get into some errors in the JS.
+        if (obj.sidePanelsStopper.length) {
+            obj.scrolledSubNavigationKeypointMax = ((parseInt(obj.sidePanelsStopper.offset().top) - obj.scrolledSubNavigationKeypointMagic - $('#access').height()) * -1);
+        }
         this.bindScrollingActions();
         this.scrollingActions();
-        /*
-        alert($('#side-panels .content .stopper').offset().top);
-        alert($('#side-panels .content').offset().top);
-        alert( $('#side-panels .content .stopper').offset().top - $('#side-panels .content').offset().top);
-        */
     },
 
     scrollingActions: function() {
@@ -42,10 +31,12 @@ var SiteWidget = {
         var fixedSign   = obj.neonSignOffset + scroller;
         obj.neonSign.css('top', String(fixedSign + 'px'));
 
+        if (!obj.sidePanelsStopper.length) { return false; }
+
         if (scroller <= obj.scrolledSubNavigationKeypointMax) {
             obj.sidePanels.addClass('fixed');
             //obj.sidePanels.css('top', (obj.scrolledSubNavigationVisiblePoint + obj.scrolledSubNavigationKeypointMagic) + 'px');
-            obj.sidePanels.css('top', (($('#side-panels .content .stopper').offset().top - $('#side-panels .content').offset().top - obj.scrolledSubNavigationVisiblePoint - obj.scrolledSubNavigationKeypointMagic) * -1) + 'px');
+            obj.sidePanels.css('top', ((obj.sidePanelsStopper.offset().top - $('#side-panels .content').offset().top - obj.scrolledSubNavigationVisiblePoint - obj.scrolledSubNavigationKeypointMagic) * -1) + 'px');
         }
         else {
             obj.sidePanels.removeClass('fixed');
@@ -55,7 +46,6 @@ var SiteWidget = {
         var scrolledSubNavigationHeight = obj.scrolledSubNavigation.outerHeight();
         var scrolledSubNavigationKeypointMin = obj.scrolledSubNavigationKeypointMax + scrolledSubNavigationHeight;
         var scrolledSubNavigationHiddenPoint = obj.scrolledSubNavigationVisiblePoint - scrolledSubNavigationHeight;
-//        var scrolledSubNavigationDifference = scrolledSubNavigationHiddenPoint + obj.scrolledSubNavigationKeypointMax;
 
         if (scroller <= scrolledSubNavigationKeypointMin && scroller >= obj.scrolledSubNavigationKeypointMax) {
             //var offset = Math.abs(scroller) + scrolledSubNavigationKeypointMin - 3;
@@ -63,18 +53,16 @@ var SiteWidget = {
             //var offset = Math.abs(scroller) - 316;
             obj.scrolledSubNavigation.css('top', offset + 'px');
         }
-
+/*
 console.log('Scroller: ' + scroller);
 console.log('Offset: ' + offset);
 console.log('Height: ' + scrolledSubNavigationHeight);
 console.log('VisiblePoint: ' + obj.scrolledSubNavigationVisiblePoint);
-//console.log('Adjusted: ' + Number(Math.abs(scroller) + scrolledSubNavigationKeypointMin));
-//console.log('Adjusted: ' + Number(scroller - scrolledSubNavigationDifference));
 console.log('KeypointMin: ' + scrolledSubNavigationKeypointMin);
 console.log('KeypointMax: ' + obj.scrolledSubNavigationKeypointMax);
 console.log('HiddenPoint: ' + scrolledSubNavigationHiddenPoint);
 console.log('--------------------------------');
-
+*/
 
         if (scroller < obj.scrolledSubNavigationKeypointMax) {
             obj.scrolledSubNavigation.css('top', String(obj.scrolledSubNavigationVisiblePoint + 'px'));
