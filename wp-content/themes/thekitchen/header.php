@@ -58,7 +58,16 @@
 
     </div><!-- #header -->
 
+    <div class="row">
+        <div class="columns large-12">
+            <div id="branding"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="columns large-9">
+            <div id="main">
+<!--
     <div id="wrapper" class="site-wrapper site-width hfeed">
         <div id="branding"></div>
-
         <div id="main">
+-->

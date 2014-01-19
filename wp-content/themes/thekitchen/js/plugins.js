@@ -36,7 +36,11 @@ var SiteWidget = {
         if (scroller <= obj.scrolledSubNavigationKeypointMax) {
             obj.sidePanels.addClass('fixed');
             //obj.sidePanels.css('top', (obj.scrolledSubNavigationVisiblePoint + obj.scrolledSubNavigationKeypointMagic) + 'px');
-            obj.sidePanels.css('top', ((obj.sidePanelsStopper.offset().top - $('#side-panels .content').offset().top - obj.scrolledSubNavigationVisiblePoint - obj.scrolledSubNavigationKeypointMagic) * -1) + 'px');
+            theTop = ((obj.sidePanelsStopper.offset().top - $('#side-panels .content').offset().top - obj.scrolledSubNavigationVisiblePoint - obj.scrolledSubNavigationKeypointMagic) * -1);
+            theTop = $('#side-panels .content').offset().top + (obj.sidePanelsStopper.offset().top - $('#side-panels .content').offset().top);
+            console.log(theTop);
+            //obj.sidePanels.css('top',  ((obj.sidePanelsStopper.offset().top - $('#side-panels .content').offset().top - obj.scrolledSubNavigationVisiblePoint - obj.scrolledSubNavigationKeypointMagic) * -1) + 'px');
+            obj.sidePanels.css('top',  theTop + 'px');
         }
         else {
             obj.sidePanels.removeClass('fixed');

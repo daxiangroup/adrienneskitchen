@@ -40,7 +40,7 @@
         <?php ak_recipe_sub_navigation(); ?>
     </div>
 </div><!-- #container -->
-
+<!--
 <div id="side-panels" class="widget-area">
     <div class="content">
         <div class="panel-banner"><span>Jump To</span></div>

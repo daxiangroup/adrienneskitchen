@@ -21,6 +21,12 @@ html, body {
     font-weight: 300;
 }
 
+input[type="text"] {
+    padding: 0.2rem;
+    font-size: 0.9rem;
+    height: auto;
+}
+
 a:active, a:link, a:visited {
     text-decoration: none;
     color: #000;
@@ -142,10 +148,10 @@ a:hover {
             width: 9.375rem; /* 150px */
         }
         #btn-search input {
-            width: 10.9375rem; /* 175px */
+            width: 15.625rem; /* 250px */
             float: left;
-            margin: .5rem .9375rem 0 0; /* 8px 15px 0 0 */
-            font-size: 1.25rem; /* 20px */
+            margin: .625rem .9375rem 0 0; /* 10px 15px 0 0 */
+            /*font-size: 1.25rem; /* 20px */
         }
         #btn-search-submit {
             width: 2.1875rem !important; /* 35px */
@@ -169,8 +175,8 @@ a:hover {
         position: relative;
         width: 28.125rem; /* 450px */
         height: 10.0625rem; /* 161px */
-        top: .25rem; /* 4px */
         background: url(img/logo.png);
+        margin-top: 4.0625rem; /* 65px*/
     }
     #neon-sign {
         position: relative;
@@ -178,6 +184,7 @@ a:hover {
         height: 16.25rem; /* 260px */
         background: url(img/neon-sign.png) no-repeat top right;
         margin: 0 auto;
+        z-index: 100;
     }
 
     #main {
@@ -220,18 +227,20 @@ a:hover {
 
         #side-panels {
             position: relative;
-            padding-top: 1.875rem; /* 30px */
-            width: 15rem; /* 240px */
+            padding-top: 1.5625rem; /* 25px */
+            /*width: 15rem; /* 240px */
+            width: 100%;
             height: 18.75rem; /* 300px */
             float: left;
-            margin-left: 1.25rem; /* 20px */
+            /*margin-left: 1.25rem; /* 20px */
         }
             #side-panels .content {
-                width: 15rem; /* 240px */
+                /*width: 15rem; /* 240px */
                 position: relative;
             }
             #side-panels .content.fixed {
                 position: fixed;
+                position: absolute;
                 /*top: -100px;*/
             }
 
@@ -294,6 +303,7 @@ a:hover {
 
 .ctr-hero-image {
     width: 44.875rem; /* 718px */
+    width: 44.75rem; /* 716px */
     height: 30rem; /* 480px */
     overflow: hidden;
 }
@@ -436,7 +446,7 @@ a:hover {
 
 .instruction-row {
     position: relative;
-    overflow: auto;
+    /*overflow: auto;*/
     margin-bottom: 1.25rem; /* 20px */
 }
     .instruction-row .step {
