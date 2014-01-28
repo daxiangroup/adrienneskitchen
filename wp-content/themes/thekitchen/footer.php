@@ -1,6 +1,6 @@
             </div> <!-- #main -->
         </div>
-        <div class="columns large-3">
+        <div class="columns medium-3 show-for-medium-up">
 
             <div id="side-panels" class="widget-area">
                 <div class="content">

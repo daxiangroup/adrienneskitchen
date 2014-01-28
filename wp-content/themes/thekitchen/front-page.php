@@ -14,7 +14,7 @@
     $front_content = get_post(2);
 ?>
 
-<div id="container" class="front-page">
+<div id="container">
     <div class="content-panel shadow-all bordered">
         <?php echo $front_content->post_content; ?>
     </div>
@@ -25,7 +25,7 @@
             $query->the_post();
     ?>
     <div class="recipe-box<?php echo ($i % 2 ? ' even' : ''); ?> bordered shadow-all">
-        <div class="img">
+        <div class="img" id="art-<?php echo $i; ?>">
             <a href="<?php echo the_permalink(); ?>">
                 <?php ak_post_image($post->ID, 'recipe-hero-349'); ?>
             </a>

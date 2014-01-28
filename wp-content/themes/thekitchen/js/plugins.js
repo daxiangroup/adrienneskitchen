@@ -38,6 +38,7 @@ var SiteWidget = {
             //obj.sidePanels.css('top', (obj.scrolledSubNavigationVisiblePoint + obj.scrolledSubNavigationKeypointMagic) + 'px');
             theTop = ((obj.sidePanelsStopper.offset().top - $('#side-panels .content').offset().top - obj.scrolledSubNavigationVisiblePoint - obj.scrolledSubNavigationKeypointMagic) * -1);
             theTop = $('#side-panels .content').offset().top + (obj.sidePanelsStopper.offset().top - $('#side-panels .content').offset().top);
+            
             console.log(theTop);
             //obj.sidePanels.css('top',  ((obj.sidePanelsStopper.offset().top - $('#side-panels .content').offset().top - obj.scrolledSubNavigationVisiblePoint - obj.scrolledSubNavigationKeypointMagic) * -1) + 'px');
             obj.sidePanels.css('top',  theTop + 'px');
@@ -164,23 +165,24 @@ var RecipeWidget = {
 var FrontPageWidget = {
     init: function() {
         var boxes = $('#container').find('.recipe-box');
+        //var boxes = $('#container').find('.recipe-box .img img');
         if (boxes.length) {
             boxes.each(function() {
-                var img = $(this).find('.img img');
+                var img = $(this).find('img');
                 var imgWidth = img.width();
                 var imgHeight = img.height();
                 var ratio = imgWidth / imgHeight;
                 var newWidth = Number(imgWidth + 20);
                 var newHeight = Math.floor(Number(newWidth / ratio));
 
-                /*
-                alert(imgWidth + ' : ' + imgHeight + ' : ' + ratio);
-                alert(newWidth + ' : ' + newHeight);
-                */
+                //alert(imgWidth + ' : ' + imgHeight + ' : ' + ratio);
+                //alert(newWidth + ' : ' + newHeight);
 
                 $(this).hover(
                     function() {
+                        alert(img);
                         img.animate({
+                        //$(this).animate({
                             width: newWidth + 'px',
                             height: newHeight + 'px',
                             top: '-=10px',
@@ -189,6 +191,7 @@ var FrontPageWidget = {
                     },
                     function() {
                         img.animate({
+                        //$(this).animate({
                             width: imgWidth + 'px',
                             height: imgHeight + 'px',
                             top: '+=10px',

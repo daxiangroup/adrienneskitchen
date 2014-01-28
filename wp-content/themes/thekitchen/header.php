@@ -59,12 +59,12 @@
     </div><!-- #header -->
 
     <div class="row">
-        <div class="columns large-12">
+        <div class="columns small-12">
             <div id="branding"></div>
         </div>
     </div>
     <div class="row">
-        <div class="columns large-9">
+        <div class="columns small-12 medium-9">
             <div id="main">
 <!--
     <div id="wrapper" class="site-wrapper site-width hfeed">

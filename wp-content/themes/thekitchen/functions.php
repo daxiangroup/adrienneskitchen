@@ -225,7 +225,7 @@ function ak_post_image($ID, $imageType)
             $extras = array('class'=>'hero-image');
             break;
         default:
-            $extras = array();
+            $extras = array('data-width'=>'400px');
             break;
     }
 
