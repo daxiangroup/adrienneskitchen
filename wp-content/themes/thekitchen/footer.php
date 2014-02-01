@@ -54,7 +54,7 @@
         </div><!-- #footer --
     </div><!-- #wrapper -->
 
-    <script src="<?php echo bloginfo('stylesheet_directory'); ?>/js/jquery.js"></script>
+    <script src="<?php echo bloginfo('stylesheet_directory'); ?>/js/vendor/jquery-1.9.1.min.js"></script>
     <script src="<?php echo bloginfo('stylesheet_directory'); ?>/js/foundation.min.js"></script>
     <script src="<?php echo bloginfo('stylesheet_directory'); ?>/js/plugins.js"></script>
     <script>

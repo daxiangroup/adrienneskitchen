@@ -16,8 +16,8 @@
     <!-- <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/main.css" /> -->
     <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/foundation.css" />
     <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/style.css" />
-    <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/roboto.css" />
-    <script src="<?php echo bloginfo('stylesheet_directory'); ?>/js/modernizr.js"></script>
+    <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/Roboto.css" />
+    <script src="<?php echo bloginfo('stylesheet_directory'); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
     <!--[if lt IE 7]>
