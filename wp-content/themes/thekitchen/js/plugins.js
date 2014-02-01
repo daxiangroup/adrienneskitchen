@@ -162,45 +162,9 @@ var RecipeWidget = {
     }
 };
 
+// Placeholder for SOMEthing on the front page
 var FrontPageWidget = {
     init: function() {
-        var boxes = $('#container').find('.recipe-box');
-        //var boxes = $('#container').find('.recipe-box .img img');
-        if (boxes.length) {
-            boxes.each(function() {
-                var img = $(this).find('img');
-                var imgWidth = img.width();
-                var imgHeight = img.height();
-                var ratio = imgWidth / imgHeight;
-                var newWidth = Number(imgWidth + 20);
-                var newHeight = Math.floor(Number(newWidth / ratio));
-
-                //alert(imgWidth + ' : ' + imgHeight + ' : ' + ratio);
-                //alert(newWidth + ' : ' + newHeight);
-
-                $(this).hover(
-                    function() {
-                        alert(img);
-                        img.animate({
-                        //$(this).animate({
-                            width: newWidth + 'px',
-                            height: newHeight + 'px',
-                            top: '-=10px',
-                            left: '-=10px',
-                        }, 200);
-                    },
-                    function() {
-                        img.animate({
-                        //$(this).animate({
-                            width: imgWidth + 'px',
-                            height: imgHeight + 'px',
-                            top: '+=10px',
-                            left: '+=10px',
-                        }, 200);
-                    }
-                );
-            });
-        }
     },
 };
 
