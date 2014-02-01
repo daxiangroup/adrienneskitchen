@@ -25,9 +25,9 @@
             $query->the_post();
     ?>
     <div class="recipe-box<?php echo ($i % 2 ? ' even' : ''); ?> bordered shadow-all">
-        <div class="img" id="art-<?php echo $i; ?>">
+        <div class="img">
             <a href="<?php echo the_permalink(); ?>">
-                <?php ak_post_image($post->ID, 'recipe-hero-349'); ?>
+                <?php ak_post_image($post->ID, 'recipe-hero-369'); ?>
             </a>
         </div>
         <div class="content">

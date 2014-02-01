@@ -22,7 +22,7 @@ show_admin_bar(false);
  ******************************************************************************/
 add_action('init', 'ak_create_post_type');
 add_image_size('recipe-hero-720', 720);
-add_image_size('recipe-hero-349', 349);
+add_image_size('recipe-hero-369', 369);
 add_image_size('recipe-hero-200', 200);
 
 
@@ -225,11 +225,13 @@ function ak_post_image($ID, $imageType)
             $extras = array('class'=>'hero-image');
             break;
         default:
-            $extras = array('data-width'=>'400px');
             break;
     }
 
-    echo wp_get_attachment_image($attachment[0]->ID, $imageType, false, $extras);
+    $image = wp_get_attachment_image_src($attachment[0]->ID, $imageType);
+    
+    echo '<img src="'.$image[0].'">';
+    //echo wp_get_attachment_image($attachment[0]->ID, $imageType, false, $extras);
 }
 
 function ak_list_categories()

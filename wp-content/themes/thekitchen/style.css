@@ -409,7 +409,18 @@ a:hover {
     }
         .recipe-box .img img {
             position: absolute;
+            transition: all 0.2s ease;
+            width: 21.8125rem; /* 349px */
+            max-width: 23.0625rem; /* 369px */
+            top: 0rem;
+            left: 0rem;
         }
+        .recipe-box:hover .img img {
+            width: 23.0625rem; /* 369px */
+            top: -.625rem; /* 10px */
+            left: -.625rem; /* 10px */
+        }
+
     .recipe-box .content {
         padding: 1.25rem; /* 20px */
         height: 15.625rem; /* 250px */
