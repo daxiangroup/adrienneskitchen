@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/foundation.css" />
     <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/style.css" />
     <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/Roboto.css" />
+    <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/adventpro.css">
     <script src="<?php echo bloginfo('stylesheet_directory'); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
