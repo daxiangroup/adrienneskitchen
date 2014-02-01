@@ -1,9 +1,9 @@
 var SiteWidget = {
     settings: {
+        header: $('#header'),
         neonSign: $('#neon-sign'),
         neonSignOffset: Number($('#neon-sign').css('top').replace(/[^-\d\.]/g, '')),
         sidePanels: $('#side-panels .content'),
-        sidePanelsOffset: Number($('#side-panels .content').css('top').replace(/[^-\d\.]/g, '')),
         sidePanelsStopper: $('#side-panels .content .stopper'),
         scrolledSubNavigation: $('#container .scrolled-sub-navigation'),
         //scrolledSubNavigationKeypointMax: -368,
@@ -34,14 +34,10 @@ var SiteWidget = {
         if (!obj.sidePanelsStopper.length) { return false; }
 
         if (scroller <= obj.scrolledSubNavigationKeypointMax) {
+            theTop = parseInt(obj.header.offset().top) + parseInt(obj.header.height()) + obj.scrolledSubNavigationKeypointMax - 19;
+
             obj.sidePanels.addClass('fixed');
-            //obj.sidePanels.css('top', (obj.scrolledSubNavigationVisiblePoint + obj.scrolledSubNavigationKeypointMagic) + 'px');
-            theTop = ((obj.sidePanelsStopper.offset().top - $('#side-panels .content').offset().top - obj.scrolledSubNavigationVisiblePoint - obj.scrolledSubNavigationKeypointMagic) * -1);
-            theTop = $('#side-panels .content').offset().top + (obj.sidePanelsStopper.offset().top - $('#side-panels .content').offset().top);
-            
-            console.log(theTop);
-            //obj.sidePanels.css('top',  ((obj.sidePanelsStopper.offset().top - $('#side-panels .content').offset().top - obj.scrolledSubNavigationVisiblePoint - obj.scrolledSubNavigationKeypointMagic) * -1) + 'px');
-            obj.sidePanels.css('top',  theTop + 'px');
+            obj.sidePanels.css('top', theTop + 'px');
         }
         else {
             obj.sidePanels.removeClass('fixed');
@@ -53,21 +49,9 @@ var SiteWidget = {
         var scrolledSubNavigationHiddenPoint = obj.scrolledSubNavigationVisiblePoint - scrolledSubNavigationHeight;
 
         if (scroller <= scrolledSubNavigationKeypointMin && scroller >= obj.scrolledSubNavigationKeypointMax) {
-            //var offset = Math.abs(scroller) + scrolledSubNavigationKeypointMin - 3;
             var offset = scrolledSubNavigationHiddenPoint + Math.abs(scroller - scrolledSubNavigationKeypointMin);
-            //var offset = Math.abs(scroller) - 316;
             obj.scrolledSubNavigation.css('top', offset + 'px');
         }
-/*
-console.log('Scroller: ' + scroller);
-console.log('Offset: ' + offset);
-console.log('Height: ' + scrolledSubNavigationHeight);
-console.log('VisiblePoint: ' + obj.scrolledSubNavigationVisiblePoint);
-console.log('KeypointMin: ' + scrolledSubNavigationKeypointMin);
-console.log('KeypointMax: ' + obj.scrolledSubNavigationKeypointMax);
-console.log('HiddenPoint: ' + scrolledSubNavigationHiddenPoint);
-console.log('--------------------------------');
-*/
 
         if (scroller < obj.scrolledSubNavigationKeypointMax) {
             obj.scrolledSubNavigation.css('top', String(obj.scrolledSubNavigationVisiblePoint + 'px'));
