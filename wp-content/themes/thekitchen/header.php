@@ -9,6 +9,7 @@
     <title>Adrienne's Kitchen</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <?php echo $extraMeta; ?>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -45,10 +46,12 @@
                     </li>
                     <li id="btn-search" class="btn">
                         <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-                            <button type="submit" id="btn-search-submit">
+                            <button type="submit" id="btn-search-submit" onclick="$('#box-search-wrapper').removeClass('closed');">
                                 <img src="<?php echo bloginfo('stylesheet_directory'); ?>/img/241.png" />
                             </button>
-                            <input type="text" name="s" id="box-search" />
+                            <div id="box-search-wrapper" class="box-search-wrapper closed">
+                                <input type="text" name="s" id="box-search" />
+                            </div>
                         </form>
                     </li>
                 </ul>

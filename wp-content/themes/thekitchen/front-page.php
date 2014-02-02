@@ -52,17 +52,17 @@
         }
     ?>
 </div><!-- #container -->
-
+<!--
 <div id="side-panels" class="widget-area">
     <div class="content">
         <div class="panel-banner"><span>Recent</span></div>
         <div class="sub-navigation site-panel">
-            <?php ak_recent_recipes(); ?>
+            <?php //ak_recent_recipes(); ?>
         </div>
 
         <div class="panel-banner"><span>Favourites</span></div>
         <div class="favourite-recipes site-panel">
-            <?php ak_favourite_recipes(); ?>
+            <?php //ak_favourite_recipes(); ?>
         </div>
     </div>
 </div><!-- #primary .widget-area -->

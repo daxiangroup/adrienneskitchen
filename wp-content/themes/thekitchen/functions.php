@@ -60,11 +60,14 @@ function ak_create_post_type()
 
 function ak_recipe_ingredients($ingredients)
 {
-    //echo '<pre>'.print_r($ingredients,true).'</pre>';
     foreach ($ingredients as $ingredient) {
         $row =  '<div class="ingredient-row">';
-        $row .= '   <div class="amount">'.$ingredient['amount'].'&nbsp;</div>';
-        $row .= '   <div class="measurement">'.$ingredient['measurement'].'</div>';
+        //$row .= '   <div class="amount">'.$ingredient['amount'].'&nbsp;</div>';
+        //$row .= '   <div class="measurement">'.$ingredient['measurement'].'</div>';
+        $row .= '   <div class="amount">';
+        $row .= '       <div class="count">'.$ingredient['amount'].'</div>';
+        $row .= '       <div class="measure">'.$ingredient['measurement'].'</div>';
+        $row .= '   </div>';
         $row .= '   <div class="ingredient">'.$ingredient['ingredient'].'</div>';
         if (!empty($ingredient['notes'])) {
             $row .= '   <div class="notes">, '.$ingredient['notes'].'</div>';
@@ -198,12 +201,24 @@ function ak_related_recipes($postID, $hasPosts = false)
     }
 }
 
-function ak_recipe_sub_navigation()
+function ak_recipe_sub_navigation($asUl = true)
 {
+    $links[] = array('label' => 'The Details', 'link' => '#the-details');
+    $links[] = array('label' => 'Ingredients', 'link' => '#ingredients');
+    $links[] = array('label' => 'What To Do', 'link' => '#what-to-do');
+
+    if ($asUl === false) {
+        foreach ($links as $data) {
+            $output .= '<div><a href="'.$data['link'].'">'.$data['label'].'</a></div>';
+        }
+        echo $output;
+        return;
+    }
+
     $output  = '<ul>';
-    $output .= '    <li><a href="#the-details">The Details</a></li>';
-    $output .= '    <li><a href="#ingredients">Ingredients</a></li>';
-    $output .= '    <li><a href="#what-to-do">What To Do</a></li>';
+    foreach ($links as $data) {
+        $output .= '    <li><a href="'.$data['link'].'">'.$data['label'].'</a></li>';
+    }
     $output .= '</ul>';
 
     echo $output;
@@ -271,8 +286,10 @@ function ak_list_tags()
 function ak_post_content($ID)
 {
     $post = wp_get_single_post($ID);
-    if (strlen($post->post_content) > 200) {
-        return substr($post->post_content, 0, 250).'...';
+    $cutoff = 230;
+
+    if (strlen($post->post_content) > $cutoff) {
+        return substr($post->post_content, 0, $cutoff).'...';
     }
     return $post->post_content;
 }

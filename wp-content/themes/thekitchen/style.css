@@ -128,7 +128,7 @@ a:hover {
             cursor: pointer;
         }
             .site-navigation .btn div {
-                margin-top: .3125rem; /* 5px */
+                margin-top: .125rem; /* 2px */
             }
             .site-navigation .btn img {
                 width: 1.875rem; /* 30px */
@@ -166,7 +166,14 @@ a:hover {
             #btn-search-submit img {
                 margin: 0rem;
             }
-
+        .box-search-wrapper {
+            transition: all 0.2 ease;
+            overflow: hidden;
+            width: 260px;
+        }
+        .box-search-wrapper.closed {
+            width: 0px;
+        }
 #site-wrapper {
     position: relative;
 }
@@ -179,8 +186,10 @@ a:hover {
         margin-top: 4.0625rem; /* 65px*/
     }
     #neon-sign {
-        position: relative;
+        position: absolute;
         top: 0rem;
+        right: 0rem;
+        width: 21.875rem; /* 350px */
         height: 16.25rem; /* 260px */
         background: url(img/neon-sign.png) no-repeat top right;
         margin: 0 auto;
@@ -272,11 +281,44 @@ a:hover {
             font-size: 1.25rem; /* 20px */
             background-color: #eb919e;
         }
+/*****[ Sub Navigation ]*******************************************************/
+.sub-navigation {
+    overflow: auto;
+    text-align: center;
+    font-size: 1rem; /* 16px */
+    line-height: 1.125rem; /* 18px */
+}
+.sub-navigation ul {
+    margin: 0rem;
+}
+.sub-navigation li {
+    list-style: none;
+    font-size: .875rem; /* 14px */
+    line-height: .9375rem; /* 15px */
+    margin-bottom: .3125rem; /*5px */
+    float: left;
+}
+    .sub-navigation li:last-child {
+        margin-bottom: 0rem;
+    }
+/*****[ Favourites/Recents/Related ]*******************************************/
+.favourite-posts, .recent-posts, .related-posts {
+    margin: 0rem;
+}
+.favourite-posts li, .recent-posts li, .related-posts li {
+    list-style: none;
+    font-size: .875rem; /* 14px */
+    line-height: .9375rem; /* 15px */
+    margin-bottom: .3125rem; /*5px */
+}
+    .favourite-posts li:last-child, .recent-posts li:last-child, .related-posts li:last-child, .sub-navigation li:last-child {
+        margin-bottom: 0rem;
+    }
 /*****[ Categories/Tags ]******************************************************/
 .category-tag-title {
     position: relative;
     margin: 0 0 1.25rem 2.5rem; /* 0 0 20px 40px */
-    top: -1.25rem; /* 20px */
+    top: -.4375rem; /* 7px */
 }
 /*****[ Recipes ]**************************************************************/
 .vitals {
@@ -425,6 +467,10 @@ a:hover {
         padding: 1.25rem; /* 20px */
         height: 15.625rem; /* 250px */
     }
+        .recipe-box .content p {
+            line-height: 1.07rem;
+            font-weight: 300;
+        }
         .recipe-box .content img {
             width: 1rem; /* 16px */
             margin: -.0625rem .25rem 0 0; /* -1px 4px 0 0 */
@@ -452,8 +498,22 @@ a:hover {
     }
     .ingredient-row .amount {
         width: 2.8125rem; /* 45px */
+        width: 120px; /* 45px */
         text-align: center;
     }
+        .ingredient-row .amount div {
+            float: left;
+            width: 50%;
+        }
+        .ingredient-row .amount div.measure {
+            padding-left: .3125rem; /* 5px */
+            margin-top: .1875rem; /* 3px */
+            font-size: .75rem; /* 12px */
+            text-align: left;
+        }
+        .ingredient-row .amount div.count {
+            text-align: right;
+        }
 
 .instruction-row {
     position: relative;
@@ -516,6 +576,13 @@ a:hover {
             margin-right: 0rem;
         }
 
+/*****[ Social Media ]*********************************************************/
+.social-media {
+    text-align: right;
+    clear: both;
+    overflow: auto;
+    margin-bottom: .625rem; /* 10px */
+}
 /*****[ Various Classes ]******************************************************/
 
 .shadow-down {
