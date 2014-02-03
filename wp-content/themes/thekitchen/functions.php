@@ -224,7 +224,7 @@ function ak_recipe_sub_navigation($asUl = true)
     echo $output;
 }
 
-function ak_post_image($ID, $imageType)
+function ak_post_image($ID, $imageType, $returnSrc = false)
 {
     // Hero Image
     $args = array(
@@ -244,7 +244,11 @@ function ak_post_image($ID, $imageType)
     }
 
     $image = wp_get_attachment_image_src($attachment[0]->ID, $imageType);
-    
+
+    if ($returnSrc === true) {
+        return $image[0];
+    }
+
     echo '<img src="'.$image[0].'">';
     //echo wp_get_attachment_image($attachment[0]->ID, $imageType, false, $extras);
 }
