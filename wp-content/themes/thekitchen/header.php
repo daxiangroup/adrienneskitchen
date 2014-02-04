@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/foundation.css" />
     <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/style.css" />
+    <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/print.css" media="print" />
     <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/Roboto.css" />
     <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/AdventPro.css">
     <script src="<?php echo bloginfo('stylesheet_directory'); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
@@ -60,12 +61,13 @@
 
     </div><!-- #header -->
 
-    <div class="row">
+    <div id="branding-container" class="row">
         <div class="columns small-12">
-            <div id="branding"></div>
+            <!--<div id="branding"></div>-->
+            <img id="branding" src="<?php echo bloginfo('stylesheet_directory'); ?>/img/logo.png" />
         </div>
     </div>
-    <div class="row">
+    <div id="main-container" class="row">
         <div class="columns small-12 medium-9">
             <div id="main">
 <!--
