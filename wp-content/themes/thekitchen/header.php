@@ -16,8 +16,26 @@
     <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/foundation.css" />
     <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/style.css" />
     <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/print.css" media="print" />
-    <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/Roboto.css" />
-    <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/AdventPro.css">
+    <style>
+        @font-face {
+            font-family: 'Advent Pro';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Advent Pro Regular'), local('AdventPro-Regular'), url(<?php echo bloginfo('stylesheet_directory'); ?>/css/AdventPro-400.woff) format('woff');
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Roboto Light'), local('Roboto-Light'), url(<?php echo bloginfo('stylesheet_directory'); ?>/css/Roboto-300.woff) format('woff');
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto Regular'), local('Roboto-Regular'), url(<?php echo bloginfo('stylesheet_directory'); ?>/css/Roboto-400.woff) format('woff');
+        }
+    </style>
     <script src="<?php echo bloginfo('stylesheet_directory'); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
