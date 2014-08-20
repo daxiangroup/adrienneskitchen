@@ -1,48 +1,36 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Adrienne's Kitchen</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <?php echo $extraMeta; ?>
-
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-    <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/foundation.css" />
-    <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/style.css" />
-    <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/print.css" media="print" />
-    <style>
-        @font-face {
-            font-family: 'Advent Pro';
-            font-style: normal;
-            font-weight: 400;
-            src: local('Advent Pro Regular'), local('AdventPro-Regular'), url(<?php echo bloginfo('stylesheet_directory'); ?>/css/AdventPro-400.woff) format('woff');
-        }
-        @font-face {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 300;
-            src: local('Roboto Light'), local('Roboto-Light'), url(<?php echo bloginfo('stylesheet_directory'); ?>/css/Roboto-300.woff) format('woff');
-        }
-        @font-face {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 400;
-            src: local('Roboto Regular'), local('Roboto-Regular'), url(<?php echo bloginfo('stylesheet_directory'); ?>/css/Roboto-400.woff) format('woff');
-        }
-    </style>
-    <script src="<?php echo bloginfo('stylesheet_directory'); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
-</head>
-<body>
-    <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
-
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <?php echo $extraMeta; ?>
+        <title>Adrienne's Kitchen</title>
+        <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/css/foundation.css" />
+        <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/style.css" />
+        <link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory'); ?>/print.css" media="print" />
+        <style>
+            @font-face {
+                font-family: 'Advent Pro';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Advent Pro Regular'), local('AdventPro-Regular'), url(<?php echo bloginfo('stylesheet_directory'); ?>/css/AdventPro-400.woff) format('woff');
+            }
+            @font-face {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 300;
+                src: local('Roboto Light'), local('Roboto-Light'), url(<?php echo bloginfo('stylesheet_directory'); ?>/css/Roboto-300.woff) format('woff');
+            }
+            @font-face {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Roboto Regular'), local('Roboto-Regular'), url(<?php echo bloginfo('stylesheet_directory'); ?>/css/Roboto-400.woff) format('woff');
+            }
+        </style>
+        <script src="<?php echo bloginfo('stylesheet_directory'); ?>/js/vendor/modernizr.js"></script>
+    </head>
+    <body>
     <div id="header" class="shadow-down">
         <div id="masthead" class="site-width">
             <div id="neon-sign" class="site-width"></div>
@@ -81,15 +69,9 @@
 
     <div id="branding-container" class="row">
         <div class="columns small-12">
-            <!--<div id="branding"></div>-->
             <img id="branding" src="<?php echo bloginfo('stylesheet_directory'); ?>/img/logo.png" />
         </div>
     </div>
     <div id="main-container" class="row">
         <div class="columns small-12 medium-9">
             <div id="main">
-<!--
-    <div id="wrapper" class="site-wrapper site-width hfeed">
-        <div id="branding"></div>
-        <div id="main">
--->

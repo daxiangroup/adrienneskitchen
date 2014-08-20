@@ -14,7 +14,8 @@ Tags: Clean
 html, body {
     position: relative;
     background: #ddd;
-    background: #ddd url(img/bg_site.png) repeat-x top center fixed;
+    /*background: #ddd url(img/bg_site.png) repeat-x top center fixed;*/
+    background: #ddd url(img/retina_wood.png);
     height: auto !important;
     min-height: 100%;
     font-family: 'Roboto';
@@ -507,7 +508,7 @@ a:hover {
         }
         .ingredient-row .amount div.measure {
             padding-left: .3125rem; /* 5px */
-            margin-top: .1875rem; /* 3px */
+            margin-top: .0625rem; /* 2px */
             font-size: .75rem; /* 12px */
             text-align: left;
         }
