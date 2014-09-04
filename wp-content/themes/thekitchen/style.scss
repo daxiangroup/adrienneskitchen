@@ -333,16 +333,18 @@ a:hover {
 /*****[ Favourites/Recents/Related ]*******************************************/
 .favourite-posts, .recent-posts, .related-posts {
     margin: 0rem;
-}
-.favourite-posts li, .recent-posts li, .related-posts li {
-    list-style: none;
-    font-size: .875rem; /* 14px */
-    line-height: .9375rem; /* 15px */
-    margin-bottom: .3125rem; /*5px */
-}
-    .favourite-posts li:last-child, .recent-posts li:last-child, .related-posts li:last-child, .sub-navigation li:last-child {
-        margin-bottom: 0rem;
+
+    li {
+        list-style: none;
+        font-size: .875rem; /* 14px */
+        line-height: .9375rem; /* 15px */
+        margin-bottom: .3125rem; /*5px */
+
+        &:last-child {
+            margin-bottom: 0rem;
+        }
     }
+}
 /*****[ Categories/Tags ]******************************************************/
 .category-tag-title {
     position: relative;
@@ -396,24 +398,7 @@ a:hover {
 }
 
 .shadow-all {
-    /*
-    -moz-box-shadow:    0px 1px 3px 2px #333, -1px -1px 3px 2px #333;
-    -webkit-box-shadow: 0px 1px 3px 2px #333, -1px -1px 3px 2px #333;
-    box-shadow:         0px 1px 3px 2px #333, -1px -1px 3px 2px #333;
-  /*
-    -moz-box-shadow:    0px 1px 3px 2px #333;
-    -webkit-box-shadow: 0px 1px 3px 2px #333;
-    box-shadow:         0px 1px 3px 2px #333;
-    */
     -moz-box-shadow:    0rem 0rem .5rem .125rem #999; /* 0 0 8px 2px */
     -webkit-box-shadow: 0rem 0rem .5rem .125rem #999; /* 0 0 8px 2px */
     box-shadow:         0rem 0rem .5rem .125rem #999; /* 0 0 8px 2px */
-
-/*
--webkit-box-shadow: 3px 3px 3px -3px #333, 3px 3px 3px -3px #333, -3px 3px 3px -3px #333;
-
--moz-box-shadow:    3px 3px 3px -3px #333, 3px 3px 3px -3px #333, -3px 3px 3px -3px #333;
-
-box-shadow:         3px 3px 3px -3px #333, 3px 3px 3px -3px #333, -3px 3px 3px -3px #333
-*/
 }

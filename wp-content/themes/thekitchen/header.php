@@ -5,10 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <?php echo $extraMeta; ?>
         <title>Adrienne's Kitchen</title>
-        <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/foundation.css" />
+        <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/foundation.min.css" />
         <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/style.css" />
-        <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/print.css" media="print" />
-        <?php echo $extraStyle; ?>
+        <?php echo $extraStyleSheets; ?>
         <style>
             @font-face {
                 font-family: 'Advent Pro';
@@ -28,10 +27,11 @@
                 font-weight: 400;
                 src: local('Roboto Regular'), local('Roboto-Regular'), url(<?php bloginfo('stylesheet_directory'); ?>/css/Roboto-400.woff) format('woff');
             }
+            <?php echo $extraStyle; ?>
         </style>
         <script src="<?php bloginfo('stylesheet_directory'); ?>/js/vendor/modernizr.js"></script>
     </head>
-    <body>
+    <body<?= empty($bodyClass) === false ? ' class="'.$bodyClass.'"' : '' ?>>
     <div id="header" class="shadow-down">
         <div class="row">
             <div id="masthead" class="columns medium-12">

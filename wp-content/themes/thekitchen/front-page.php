@@ -1,5 +1,5 @@
 <?php
-    get_header();
+    get_header('front-page');
 
     $query = new WP_Query(array(
         'post_type' => 'recipe',

@@ -22,7 +22,9 @@ var SiteWidget = {
         }
         this.bindScrollingActions();
         this.scrollingActions();
-        this.socialMediaSetup();
+        if ($('body').hasClass('single-recipe')) {
+            this.socialMediaSetup();
+        }
     },
 
     socialMediaSetup: function() {
@@ -42,6 +44,13 @@ var SiteWidget = {
             po.src = 'https://apis.google.com/js/platform.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
         })();
+        (function(d, s, id) {
+            var js, pjs = d.getElementByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//assets.pinterest.com/js/pinit.js";
+            pjs.parentNode.insertBefore(js, pjs);
+        })(document, 'script', 'pinit-js');
     },
 
     scrollingActions: function() {

@@ -1,0 +1,78 @@
+.recipe-box {
+    position: relative;
+    float: left;
+    width: 21.8125rem; /* 349px */
+    margin: 0 1.25rem 1.25rem 0; /* 0 20px 20px 0 */
+    background-color: #fff;
+    font-size: .875rem; /* 14px */
+
+    &.even {
+        margin-right: 0rem;
+    }
+
+    h2 {
+        margin: 0rem;
+        font: 400 1.625rem 'Advent Pro'; /* 26px */
+
+    }
+
+    &:hover {
+        h2 {
+            color: #EB919E;
+        }
+    }
+
+    .img {
+        position: relative;
+        overflow: hidden;
+        height: 13.75rem; /* 220px */
+
+        img {
+            position: absolute;
+            transition: all 0.2s ease;
+            width: 21.8125rem; /* 349px */
+            max-width: 23.0625rem; /* 369px */
+            top: 0rem;
+            left: 0rem;
+        }
+    }
+
+    &:hover {
+        .img {
+            img {
+                width: 23.0625rem; /* 369px */
+                top: -.625rem; /* 10px */
+                left: -.625rem; /* 10px */
+            }
+        }
+    }
+
+    .content {
+        padding: 1.25rem; /* 20px */
+        height: 15.625rem; /* 250px */
+
+        p {
+            line-height: 1.07rem;
+            font-weight: 300;
+        }
+
+        img {
+            width: 1rem; /* 16px */
+            margin: -.0625rem .25rem 0 0; /* -1px 4px 0 0 */
+        }
+    }
+
+    .info {
+        position: absolute;
+        bottom: 1.25rem; /* 20px */
+        overflow: auto;
+    }
+
+    .categories, .tags {
+        font-size: .75rem; /* 12px */
+    }
+
+    .categories {
+        margin-bottom: .125rem; /* 2px */
+    }
+}
