@@ -1,5 +1,5 @@
 <?php
-    get_header();
+    get_header('front-page');
 
     $query = new WP_Query(array(
         'post_type' => 'recipe',
@@ -14,7 +14,7 @@
     $front_content = get_post(2);
 ?>
 
-<div id="container" class="front-page">
+<div id="container">
     <div class="content-panel shadow-all bordered">
         <?php echo $front_content->post_content; ?>
     </div>
@@ -27,7 +27,7 @@
     <div class="recipe-box<?php echo ($i % 2 ? ' even' : ''); ?> bordered shadow-all">
         <div class="img">
             <a href="<?php echo the_permalink(); ?>">
-                <?php ak_post_image($post->ID, 'recipe-hero-349'); ?>
+                <?php ak_post_image($post->ID, 'recipe-hero-369'); ?>
             </a>
         </div>
         <div class="content">
@@ -52,17 +52,17 @@
         }
     ?>
 </div><!-- #container -->
-
+<!--
 <div id="side-panels" class="widget-area">
     <div class="content">
-        <div class="panel-banner stopper"><span>Recent</span></div>
+        <div class="panel-banner"><span>Recent</span></div>
         <div class="sub-navigation site-panel">
-            <?php ak_recent_recipes(); ?>
+            <?php //ak_recent_recipes(); ?>
         </div>
 
         <div class="panel-banner"><span>Favourites</span></div>
         <div class="favourite-recipes site-panel">
-            <?php ak_favourite_recipes(); ?>
+            <?php //ak_favourite_recipes(); ?>
         </div>
     </div>
 </div><!-- #primary .widget-area -->

@@ -1,2 +1,4 @@
 .htaccess
 adrienneskitchen.sublime*
+*.codekit
+.sass-cache

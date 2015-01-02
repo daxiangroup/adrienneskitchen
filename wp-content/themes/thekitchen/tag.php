@@ -27,7 +27,7 @@
     <div class="recipe-box<?php echo ($i % 2 ? ' even' : ''); ?> bordered shadow-all">
         <div class="img">
             <a href="<?php echo the_permalink(); ?>">
-                <?php ak_post_image($post->ID, 'recipe-hero-349'); ?>
+                <?php ak_post_image($post->ID, 'recipe-hero-369'); ?>
             </a>
         </div>
         <div class="content">
@@ -52,19 +52,5 @@
         }
     ?>
 </div><!-- #container -->
-
-<div id="side-panels" class="widget-area">
-    <div class="content">
-        <div class="panel-banner stopper"><span>Recent</span></div>
-        <div class="sub-navigation site-panel">
-            <?php ak_recent_recipes(); ?>
-        </div>
-
-        <div class="panel-banner"><span>Favourites</span></div>
-        <div class="favourite-recipes site-panel">
-            <?php ak_favourite_recipes(); ?>
-        </div>
-    </div>
-</div><!-- #primary .widget-area -->
 
 <?php get_footer(); ?>
