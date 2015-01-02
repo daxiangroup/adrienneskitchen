@@ -31,13 +31,24 @@ var SiteWidget = {
         // Facebook
         (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
+            if (d.getElementById(id)) {
+                return;
+            }
             js = d.createElement(s); js.id = id;
             js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
         // Twitter
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+        // !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs"));
         // Google+
         (function() {
             var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
@@ -45,8 +56,10 @@ var SiteWidget = {
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
         })();
         (function(d, s, id) {
-            var js, pjs = d.getElementByTagName(s)[0];
-            if (d.getElementById(id)) return;
+            var js, pjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
             js = d.createElement(s); js.id = id;
             js.src = "//assets.pinterest.com/js/pinit.js";
             pjs.parentNode.insertBefore(js, pjs);
@@ -56,8 +69,9 @@ var SiteWidget = {
     scrollingActions: function() {
         var obj = this.settings;
 
-        var scroller   = -Math.abs($(window).scrollTop());
-        var fixedSign   = obj.neonSignOffset + scroller;
+        var theTop    = '';
+        var scroller  = -Math.abs($(window).scrollTop());
+        var fixedSign = obj.neonSignOffset + scroller;
         obj.neonSign.css('top', String(fixedSign + 'px'));
 
         if (!obj.sidePanelsStopper.length) { return false; }
@@ -93,8 +107,6 @@ var SiteWidget = {
     },
 
     bindScrollingActions: function() {
-        var obj = this.settings;
-
         // Adjusting the Neon Sign to scroll with the page. It needs to have a
         // higher z-index than the navigation bar fixed to the top of the screen.
         $(window).scroll(function() {
@@ -110,13 +122,14 @@ var SiteWidget = {
     */
 
     getDirection: function() {
-        obj = this.settings;
+        var obj  = this.settings;
+        var icon = '';
 
         if (obj.menuControl.hasClass('toggle-up')) {
             obj.menuControl.addClass('toggle-down');
             obj.menuControl.removeClass('toggle-up');
 
-            var icon = obj.menuControl.find('.direction');
+            icon = obj.menuControl.find('.direction');
             icon.addClass('icon-arrow-down');
             icon.removeClass('icon-arrow-up');
 
@@ -128,7 +141,7 @@ var SiteWidget = {
             obj.menuControl.addClass('toggle-up');
             obj.menuControl.removeClass('toggle-down');
 
-            var icon = obj.menuControl.find('.direction');
+            icon = obj.menuControl.find('.direction');
             icon.addClass('icon-arrow-up');
             icon.removeClass('icon-arrow-down');
 
@@ -138,6 +151,7 @@ var SiteWidget = {
         }
     },
 
+    /*
     animate: function() {
         this.getDirection();
 
@@ -148,6 +162,7 @@ var SiteWidget = {
         obj.contentContainer.fadeTo(obj.sped, obj.opacity);
         obj.menuContainer.fadeTo(obj.speed, obj.menuOpacity);
     }
+    */
 };
 
 var RecipeWidget = {
