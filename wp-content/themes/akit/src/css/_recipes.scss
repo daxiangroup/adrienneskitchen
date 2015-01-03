@@ -1,0 +1,87 @@
+.akit-recipe {
+    position: relative;
+    padding-top: 370px;
+
+    .container {
+        position: relative;
+        z-index: 100;
+    }
+}
+
+.akit-recipe--hero-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    border-bottom: solid 1px $color-divider;
+    z-index: 1;
+
+    img {
+        /*
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        */
+        min-width: 1220px;
+        width: 100%;
+    }
+}
+
+.akit-recipe--header {
+    background-color: $color-primary-faded;
+}
+
+.akit-recipe--content {
+    h4 {
+        color: $color-light-primary;
+    }
+
+    .recipe-information {
+        position: relative;
+
+        @media #{$small-and-down} {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .read-more {
+            position: absolute;
+            width: 100%;
+            height: 60px;
+            bottom: 0;
+            background-image: linear-gradient(transparent 5%, white 65%);
+
+            a {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+
+    .ingredient-row {
+        div {
+            display: inline-block;
+        }
+
+        .amount {
+            width: 30%;
+
+            div {
+                width: 48%;
+            }
+
+            .count {
+                text-align: right;
+            }
+
+            .measure {
+                font-size: .75rem;
+            }
+        }
+    }
+}
