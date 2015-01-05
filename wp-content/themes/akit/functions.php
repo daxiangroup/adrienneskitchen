@@ -48,7 +48,6 @@ function ak_create_post_type()
     ));
 }
 
-
 function ak_recipe_ingredients($ingredients)
 {
     foreach ($ingredients as $ingredient) {
@@ -72,25 +71,52 @@ function ak_recipe_ingredients($ingredients)
 
 function ak_recipe_instructions($instructions)
 {
-    //echo '<pre>'.print_r($instructions,true).'</pre>';
     foreach ($instructions as $step => $instruction) {
-        $float = $step % 3 ? 'right' : 'left';
 
-        $row =  '<div class="instruction-row">';
-        $row .= '   <div class="step">Step '.($step+1).'</div>';
-        $row .= '   <div class="instruction">';
+        // $row =  '<div class="instruction-row">';
+        // $row .= '   <div class="step">Step '.($step+1).'</div>';
+        // $row .= '   <div class="instruction">';
+        $row = '<p>';
+        $row .= '   '.$instruction['description'];
         if (!empty($instruction['image'])) {
-            $row .= '       <a href="http://placekitten.com/500/700" rel="lightbox['.rand(5,23423).']">'.wp_get_attachment_image($instruction['image'], 'thumbnail', false, array(
-                'class' => $float,
-            )).'</a>';
+            $src = wp_get_attachment_image_src($instruction['image'], 'large', false);
+
+            $row .= '<a href="'.$src[0].'" rel="lightbox"><i class="mdi-image-photo-camera"></i></a>';
+        //     $row .= '       <a href="http://placekitten.com/500/700" rel="lightbox['.rand(5,23423).']">'.wp_get_attachment_image($instruction['image'], 'thumbnail', false, array(
+        //         'class' => $float,
+        //     )).'</a>';
         }
-        $row .= '       '.$instruction['description'];
-        $row .= '   </div>';
-        $row .= '</div>';
+        $row .= '</p>';
+        // $row .= '   </div>';
+        // $row .= '</div>';
         echo $row;
 
         unset($row);
     }
+}
+
+function ak_recipe_photos($instructions)
+{
+    foreach ($instructions as $step => $instruction) {
+
+        if (!empty($instruction['image'])) {
+            $src = wp_get_attachment_image_src($instruction['image'], 'large', false);
+            $img = wp_get_attachment_image($instruction['image'], 'thumbnail', false);
+
+            $photos[] = '<a href="'.$src[0].'" rel="lightbox">'.$img.'</a>';
+        }
+    }
+
+    if (count($photos) === 0) {
+        return false;
+    }
+
+    echo '<div class="recipe-photos">';
+    echo '    <h4>Photos</h4>';
+    foreach ($photos as $photo) {
+        echo $photo;
+    }
+    echo '</div>';
 }
 
 function ak_favourite_recipes()
@@ -106,14 +132,14 @@ function ak_favourite_recipes()
 
     if ($favourite_recipes->have_posts()) {
         ?>
-        <ul class="favourite-posts">
+        <ul>
             <?php
             while ($favourite_recipes->have_posts()) : $favourite_recipes->the_post();
-            ?>
-                <li>
-                    <a href="<?php the_permalink() ?>" > <?php the_title();?> </a>
-                </li>
-            <?php
+            ?><li>
+                <a href="<?php the_permalink() ?>" >
+                    <?php ak_post_image(get_the_ID(), 'medium'); ?>
+                    <span><?php the_title(); ?></span>
+                </a></li><?php
             endwhile;
             ?>
         </ul>
@@ -133,12 +159,13 @@ function ak_recent_recipes()
 
     if ($recent_recipes->have_posts()) {
         ?>
-        <ul class="recent-posts">
+        <ul>
             <?php
             while ($recent_recipes->have_posts()) : $recent_recipes->the_post();
+                $src = ak_post_image(get_the_ID(), 'thumbnail', true);
             ?>
                 <li>
-                    <a href="<?php the_permalink() ?>" > <?php the_title();?> </a>
+                    <a href="<?php the_permalink() ?>" > <?php $src; //the_title();?> </a>
                 </li>
             <?php
             endwhile;
@@ -175,17 +202,19 @@ function ak_related_recipes($postID, $hasPosts = false)
                 return true;
             }
         ?>
-            <ul class="related-posts">
+        <div class="recipe-related">
+            <ul>
                 <?php
                 while ($related_query->have_posts()) : $related_query->the_post();
-                ?>
-                    <li>
-                        <a href="<?php the_permalink() ?>" > <?php the_title();?> </a>
-                    </li>
-                <?php
+                ?><li>
+                    <a href="<?php the_permalink() ?>" >
+                        <?php ak_post_image(get_the_ID(), 'medium'); ?>
+                        <span><?php the_title(); ?></span>
+                    </a></li><?php
                 endwhile;
                 ?>
             </ul>
+        </div>
         <?php
         }
         wp_reset_query(); // to reset the loop : http://codex.wordpress.org/Function_Reference/wp_reset_query
@@ -241,7 +270,6 @@ function ak_post_image($ID, $imageType, $returnSrc = false)
     }
 
     echo '<img src="'.$image[0].'" alt="">';
-    //echo wp_get_attachment_image($attachment[0]->ID, $imageType, false, $extras);
 }
 
 function ak_list_categories()

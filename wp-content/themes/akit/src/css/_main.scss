@@ -2,6 +2,10 @@ html {
     background-color: $color-background;
 }
 
+#colorbox:focus, a[rel="lightbox"]:focus {
+    outline: none;
+}
+
 .no-padding {
     padding: 0 !important;
 }

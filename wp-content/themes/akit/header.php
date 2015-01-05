@@ -18,6 +18,14 @@
     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
     <![endif]-->
     <script>(function(){document.documentElement.className='js'})();</script>
+    <style>
+        @font-face {
+            font-family: 'Advent Pro';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Advent Pro Regular'), local('AdventPro-Regular'), url(<?php bloginfo('stylesheet_directory'); ?>/font/adventpro/AdventPro-400.woff) format('woff');
+        }
+    </style>
     <?php wp_head(); ?>
 </head>
 

@@ -32,16 +32,60 @@
 }
 
 .akit-recipe--header {
+    position: relative;
     background-color: $color-primary-faded;
+    border-bottom: solid 1px $color-divider;
+    font-family: 'Advent Pro';
+    min-height: 110px;
+
+    h1 {
+        margin: 0 10px;
+        color: $color-text-icons;
+    }
 }
 
 .akit-recipe--content {
-    h4 {
+    h4, a[rel="lightbox"] {
         color: $color-light-primary;
+    }
+
+    h4 {
+        font-family: 'Advent Pro';
+    }
+
+    .recipe-vitals {
+        margin-top: 10px;
+        padding-bottom: 1em;
+
+        .course, .prep-time, .cook-time, .yield {
+            display: inline-block;
+            border-right: dotted 1px $color-divider;
+            padding-right: 20px;
+            margin-right: 20px;
+        }
+
+        .yield {
+            border: none;
+            padding-right: 0;
+            margin-right: 0;
+        }
+
+        .details {
+            display: none;
+        }
     }
 
     .recipe-information {
         position: relative;
+        border-bottom: solid 1px $color-divider;
+
+        p:first-of-type {
+            font-family: 'Advent Pro';
+            /* 22px */
+            font-size: 1.375rem;
+            /* 24px */
+            line-height: 1.5rem;
+        }
 
         @media #{$small-and-down} {
             height: 200px;
@@ -63,24 +107,79 @@
         }
     }
 
-    .ingredient-row {
-        div {
-            display: inline-block;
-        }
+    .recipe-ingredients {
+        border-bottom: solid 1px $color-divider;
+        padding-bottom: 1em;
 
-        .amount {
-            width: 30%;
-
+        .ingredient-row {
             div {
-                width: 48%;
+                display: inline-block;
             }
 
-            .count {
-                text-align: right;
+            .amount {
+                width: 30%;
+
+                div {
+                    width: 48%;
+                }
+
+                .count {
+                    text-align: right;
+                }
+
+                .measure {
+                    font-size: .75rem;
+                }
+            }
+        }
+    }
+
+    .recipe-instructions a[rel="lightbox"] {
+        margin-left: 10px;
+    }
+
+    .recipe-photos {
+        border-top: solid 1px $color-divider;
+    }
+}
+
+.recipe-sidebar {
+    .recipe-favourites, .recipe-related {
+        ul { line-height: 0; }
+
+        li {
+            position: relative;
+            display: inline-block;
+            width: 50%;
+            height: 130px;
+            overflow: hidden;
+            background-color: $color-primary-faded;
+
+            img {
+                margin-top: -20%;
+                margin-left: -50%;
+                transition: all .300s ease;
             }
 
-            .measure {
-                font-size: .75rem;
+            span {
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                font-family: 'Advent Pro';
+                color: $color-text-icons;
+                font-size: 1.5em;
+                line-height: 1.125em;
+                opacity: 0;
+                transition: all .300s ease;
+            }
+
+            &:hover {
+                img {
+                    opacity: 0.3;
+                }
+                span {
+                    opacity: 1;
+                }
             }
         }
     }
